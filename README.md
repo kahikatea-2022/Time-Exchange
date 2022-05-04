@@ -1,8 +1,11 @@
 # Time Exchange (TBC)
 
 #### Table of contents (fix links):
-- [1. Getting started](#2getting-started)
-- [2. Key Links](#2.-key-links)
+1. Getting started
+2. Key Links
+3. Auth0 Premissions and Roles
+4. API Routes
+5. DB Schema
 
 ---
 
