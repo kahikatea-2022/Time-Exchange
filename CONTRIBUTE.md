@@ -17,6 +17,13 @@
 
 **Branch Naming**: [issue-number]-[brief-title-in-kebab-case] (e.g: 5-create-profile-component)
 
+## Work process
+- Do some coding
+- `npm run format`
+- `npm add whatever` (only add files that are relevant to your ticket!)
+- `npm commit -m "message"`
+- `npm push orgin branchName`
+
 ## When finishing a ticket
 - `git pull origin dev`
 - Handle any merge conflicts (ask for help if required)
