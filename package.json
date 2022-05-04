@@ -19,7 +19,10 @@
     "lint": "eslint --ext .js,.jsx .",
     "format": "prettier -w server client",
     "webpack": "webpack --config ./client/webpack.config.js",
-    "knex": "knex --knexfile ./server/db/knexfile.js"
+    "knex": "knex --knexfile ./server/db/knexfile.js",
+    "db:migrate": "npm run knex migrate:latest",
+    "db:seed": "npm run knex seed:run",
+    "db:reset": "npm run knex migrate:rollback && npm run db:migrate && npm run db:seed"
   },
   "babel": {
     "presets": [
