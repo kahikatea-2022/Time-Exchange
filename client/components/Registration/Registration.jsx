@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import { addUser } from '../apis/users'
+import { addUser } from '../../apis/users'
 
 function Registration() {
   const user = useSelector((state) => state.user)

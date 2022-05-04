@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { getLoginFn, getLogoutFn, getRegisterFn } from '../auth0-utils'
-import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
+import { getLoginFn, getLogoutFn, getRegisterFn } from '../../auth0-utils'
+import { IfAuthenticated, IfNotAuthenticated } from '../Authenticated/Authenticated'
 import { useSelector } from 'react-redux'
 
 function Nav() {
