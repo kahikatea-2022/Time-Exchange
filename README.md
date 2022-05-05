@@ -64,6 +64,8 @@ Add information about permissions here
 
 ## 4. API Routes (TBC)
 
+**Protected**: Can only be accessed once they've been signed into Auth0. Bearer token needs to be passed with the request.
+
 Failure response (HTTP status: 500):
 
 ```json
@@ -74,18 +76,36 @@ Failure response (HTTP status: 500):
 }
 ```
 
-### `GET /api/v1/example`
+### `PSOT /api/v1/users`
+
+Request (protected): 
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "username": "jDoe110",
+  "email": "j.d@email.com",
+  "about": "about me...",
+  "skills": [
+    {
+      "category": 1,
+      "skill": "skateboarding",
+      "role": "learn"
+    },
+    {
+      "category": 2,
+      "skill": "oil painting",
+      "role": "teach"
+    },
+  ]
+}
+```
 
 Response (200):
 
 ```json
 {
-  "example": [
-    {
-      "id": 1,
-      "name": "example",
-    }
-  ]
+  "id" : 2
 }
 ```
 
