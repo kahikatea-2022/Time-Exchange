@@ -1,0 +1,11 @@
+// Setup
+@charset "utf-8";
+@use './normalize';
+
+// Pages
+@use './pages/_home.scss';
+@use './pages/_register.scss';
+
+// Components
+@use './components/_header.scss';
+@use './components/_nav.scss';
