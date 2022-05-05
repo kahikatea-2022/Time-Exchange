@@ -93,4 +93,4 @@ Response (200):
 
 ## 5. DB Schema (TBC)
 
-Add here...
+![Time Exchange DBA](https://user-images.githubusercontent.com/49049363/166867526-d1a7fbfa-5af1-478d-8226-7735d370f9c5.png)
