@@ -2,7 +2,9 @@ const express = require('express')
 const jwtAuthz = require('express-jwt-authz')
 const { getUserRoles, checkJwt } = require('../auth0')
 
-const db = require('../db/users')
+const { addUser } = require('../db/users')
+const { addUserSkills } = require('../db/skills')
+
 const router = express.Router()
 
 // middleware for checking permissions (authorization)
@@ -10,19 +12,45 @@ const checkAdmin = jwtAuthz(['read:my_private_route'], {
   customScopeKey: 'permissions',
 })
 
-// POST /api/v1/users/protected
-router.post('/', async (req, res) => {
-  const { auth0Id, name, email, description } = req.body
-  const user = { auth0Id, name, email, description }
-
+// POST /api/v1/users
+// Adds new user and skills
+router.post('/', checkJwt, async (req, res) => {
   try {
-    await db.addUser(user)
-    res.sendStatus(201)
+    const auth0Id = req.user?.sub
+    const user = req.body
+    const [id] = addUser({
+      auth0Id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      username: user.username,
+      email: user.email,
+      about: user.about,
+    })
+    await addUserSkills(id, user.skills)
+    res.status(201).json({ id })
   } catch (error) {
-    console.error(error)
-    res.status(500).json({ message: 'unable to insert user into the database' })
+    console.log(error)
+    res.status(500).json({
+      error: {
+        title: "Couldn't add users",
+      },
+    })
   }
 })
+
+// POST /api/v1/users/protected
+// router.post('/', async (req, res) => {
+//   const { auth0Id, name, email, description } = req.body
+//   const user = { auth0Id, name, email, description }
+
+//   try {
+//     await db.addUser(user)
+//     res.sendStatus(201)
+//   } catch (error) {
+//     console.error(error)
+//     res.status(500).json({ message: 'unable to insert user into the database' })
+//   }
+// })
 
 // public - an endpoint that anyone can access
 // GET /api/v1/users/public
