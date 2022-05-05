@@ -8,6 +8,10 @@ exports.up = async (knex) => {
     table.string('username').notNullable().unique()
     table.string('email').notNullable().unique()
     table.string('about').notNullable()
+    table
+      .enu('status', ['active', 'inactive'])
+      .notNullable()
+      .defaultTo('active')
     table.timestamps(true, true)
   })
 }
