@@ -6,12 +6,14 @@ import Nav from './components/Nav/Nav'
 import Registration from './components/Registration/Registration'
 import Users from './components/Users'
 import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
 
 function App() {
   cacheUser(useAuth0)
 
   return (
     <div className="app">
+      <Header/>
       <Nav /> {/* call from header instead */}
       <Routes>
         <Route path="/" element={<Users />} />
