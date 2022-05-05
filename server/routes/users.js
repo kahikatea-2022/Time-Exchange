@@ -18,7 +18,7 @@ router.post('/', checkJwt, async (req, res) => {
   try {
     const auth0Id = req.user?.sub
     const user = req.body
-    const [id] = addUser({
+    const [id] = await addUser({
       auth0Id,
       firstName: user.firstName,
       lastName: user.lastName,
