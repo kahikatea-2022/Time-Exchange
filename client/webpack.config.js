@@ -1,8 +1,13 @@
 const path = require('path')
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
-  entry: ['./client/index.js', './client/styles/index.scss'],
+  entry: [
+    path.join(__dirname, 'index.js'),
+    path.join(__dirname, 'styles/main.scss'),
+  ],
   output: {
     path: path.join(__dirname, '..', 'server', 'public'),
     filename: 'bundle.js',
@@ -10,9 +15,9 @@ module.exports = {
   mode: 'development',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
-      chunkFilename: '[id].css',
-      ignoreOrder: false, // Enable to remove warnings about conflicting order
+      filename: 'styles.min.css',
+      // chunkFilename: '[id].css',
+      // ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
   module: {
@@ -33,6 +38,10 @@ module.exports = {
         ],
       },
     ],
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin()],
   },
   resolve: {
     extensions: ['.js', '.jsx'],

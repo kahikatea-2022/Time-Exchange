@@ -1,0 +1,8 @@
+@use '../theme';
+@use '../mediaQuery';
+
+// styles for the nav component here
+
+header {
+  background-color: theme.$header-background;
+}

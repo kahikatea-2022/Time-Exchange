@@ -1,0 +1,7 @@
+@use '../theme';
+@use '../mediaQuery';
+
+// styles for the header component here
+.headerTest {
+  color: theme.$primary;
+}

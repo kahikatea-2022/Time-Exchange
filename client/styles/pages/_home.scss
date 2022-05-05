@@ -1,0 +1,17 @@
+@use '../theme';
+@use '../mediaQuery';
+
+// examples
+.about-section {
+  color: theme.$primary;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  @include mediaQuery.media-queries(desktop, min) {
+    flex-direction: column;
+  }
+}
+
+// styles for the home page here
+// delete the above example
