@@ -78,6 +78,15 @@ function getUsers(db = connection) {
     .where('status', 'active')
 }
 
+function checkExists(key, value, db = connection) {
+  return db('users')
+    .count('id as n')
+    .where(key, value)
+    .then((count) => {
+      return count[0].n > 0
+    })
+}
+
 module.exports = {
   addUser,
   updateUser,
@@ -85,4 +94,5 @@ module.exports = {
   getUserById,
   getUserByAuth,
   getUsers,
+  checkExists,
 }
