@@ -13,12 +13,24 @@ function addUserSkills(id, skills, db = connection) {
 
 function getSkillsByUserId(id, db = connection) {
   return db('skills')
-    .select(['categories.name', 'skills.skill', 'skills.role'])
+    .select([
+      'skills.id',
+      'categories.name as category',
+      'skills.skill',
+      'skills.role',
+    ])
     .join('categories', 'skills.category_id', 'categories.id')
     .where('skills.user_id', id)
+}
+
+function getAllSkills(db = connection) {
+  return db('skills')
+    .select(['categories.name', 'skills.skill', 'skills.role'])
+    .join('categories', 'skills.category_id', 'categories.id')
 }
 
 module.exports = {
   getSkillsByUserId,
   addUserSkills,
+  getAllSkills,
 }

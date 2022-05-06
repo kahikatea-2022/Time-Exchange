@@ -3,8 +3,8 @@ const express = require('express')
 const { checkJwt } = require('../auth0')
 
 // db functions
-const { addUser, checkExists } = require('../db/users')
-const { addUserSkills } = require('../db/skills')
+const { addUser, checkExists, getUserByAuth } = require('../db/users')
+const { addUserSkills, getSkillsByUserId } = require('../db/skills')
 
 // Setup
 const router = express.Router()
@@ -41,7 +41,9 @@ router.post('/', checkJwt, async (req, res) => {
 router.get('/', checkJwt, async (req, res) => {
   try {
     const auth0Id = req.user?.sub
-    res.sendStatus(200)
+    const user = await getUserByAuth(auth0Id)
+    const skills = await getSkillsByUserId(user.id)
+    res.status(200).json({ ...user, skills })
   } catch (error) {
     console.log(error)
     res.status(500).json({
