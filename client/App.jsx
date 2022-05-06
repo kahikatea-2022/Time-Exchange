@@ -4,6 +4,7 @@ import { cacheUser } from './auth0-utils'
 // import PingRoutes from './components/PingRoutes'
 import Registration from './components/Registration/Registration'
 import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
 import Home from './pages/Home'
 import MyProfile from './pages/MyProfile'
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="app">
-      {/* Put header here */}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/myprofile" element={<MyProfile />} />
