@@ -66,13 +66,13 @@ Add information about permissions here
 
 ## 4. API Routes (proposal)
 
-| Method | Endpoint           | Protected | Description                                      |
-| ------ | ------------------ | --------- | ------------------------------------------------ |
-| POST   | /api/v1/user       | True      | Create new user                                  |
-| GET    | /api/v1/user       | True      | returns current logged in user details           |
-| GET    | /api/v1/user/check | False     | returns true if users is unique, otherwise false |
-| GET    | /api/v1/categories | False     | returns all the skill categories                 |
-| GET    | /api/v1/users      | True      | returns all user details                         |
+| Method | Endpoint           | Protected | Description                                               |
+| ------ | ------------------ | --------- | --------------------------------------------------------- |
+| POST   | /api/v1/user       | True      | Create new user                                           |
+| GET    | /api/v1/user       | True      | returns current logged in user details                    |
+| GET    | /api/v1/user/check | False     | returns true if usersname already exists, otherwise false |
+| GET    | /api/v1/categories | False     | returns all the skill categories                          |
+| GET    | /api/v1/users      | True      | returns all user details                                  |
 
 **Protected**: Can only be accessed once they've been signed into Auth0. Bearer token needs to be passed with the request.
 
