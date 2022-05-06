@@ -14,6 +14,9 @@ body {
   z-index: 2;
   color: #083d77;
 }
+.hamburger:hover {
+  cursor: pointer;
+}
 .nav-menu {
   margin: 0;
   display: flex;
