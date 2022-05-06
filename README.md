@@ -68,7 +68,7 @@ Method | Endpoint | Protected | Description
 --- | --- | --- | --- 
 POST | /api/v1/user | True | Create new user
 GET | /api/v1/user | True | returns current logged in user details
-GET | /api/v1/user/check  | False | returns true if users is unique, otherwise false
+GET | /api/v1/user/check  | False | returns true if usersname already exists, otherwise false
 GET | /api/v1/categories  | False | returns all the skill categories
 GET | /api/v1/users  | True | returns all user details
 
