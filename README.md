@@ -76,7 +76,7 @@ Failure response (HTTP status: 500):
 }
 ```
 
-### `PSOT /api/v1/users`
+### `POST /api/v1/users`
 
 Request (protected): 
 ```json
