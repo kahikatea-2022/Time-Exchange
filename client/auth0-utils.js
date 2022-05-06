@@ -1,31 +1,16 @@
 import { setUser } from './actions/user'
-import { getUserRoles } from './apis/users'
+import { getUser } from './apis/users'
 import store from './store'
 
-const tempFakeData = {
-  about: 'about me...',
-  skills: [
-    {
-      id: 3,
-      category: 'Sports',
-      skill: 'skateboarding',
-      role: 'learn',
-    },
-    {
-      id: 4,
-      category: 'Arts and Crafts',
-      skill: 'oil painting',
-      role: 'teach',
-    },
-  ],
-}
 const emptyUser = {
+  about: '',
   auth0Id: '',
   email: '',
-  name: '',
-  token: '',
-  roles: [],
-  ...tempFakeData,
+  firstName: '',
+  id: -1,
+  lastName: '',
+  skills: [],
+  username: '',
 }
 
 function saveUser(user = emptyUser) {
@@ -33,20 +18,14 @@ function saveUser(user = emptyUser) {
 }
 
 export async function cacheUser(useAuth0) {
-  const { isAuthenticated, getAccessTokenSilently, user } = useAuth0()
+  const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   if (isAuthenticated) {
     try {
       const token = await getAccessTokenSilently()
-      const roles = await getUserRoles(user.sub)
-      const userToSave = {
-        auth0Id: user.sub,
-        email: user.email,
-        name: user.nickname,
-        token,
-        roles,
-        ...tempFakeData,
-      }
-      saveUser(userToSave)
+
+      const user = await getUser(token)
+
+      saveUser(user)
     } catch (err) {
       console.error(err)
     }

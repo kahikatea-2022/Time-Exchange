@@ -8,6 +8,20 @@ export function getUsers() {
   })
 }
 
+/**
+ * @param {string} accessToken
+ */
+export function getUser(accessToken) {
+  return request
+    .get(rootUrl + '/user')
+    .auth(accessToken, {
+      type: 'bearer',
+    })
+    .then((res) => {
+      return res.body
+    })
+}
+
 export function addUser(user) {
   return request.post(rootUrl + '/users').send(user)
 }
