@@ -28,7 +28,7 @@ export function getUser(token) {
 
 export function addUser(user, token) {
   return request
-    .get(rootUrl + '/user')
+    .post(rootUrl + '/user')
     .set('authorization', `Bearer ${token}`)
     .set({ Accept: 'application/json' })
     .send(user)
@@ -50,7 +50,7 @@ export function checkUsername(username) {
   return request
     .get(rootUrl + '/user/check')
     .set({ Accept: 'application/json' })
-    .send({ username })
+    .query({ username })
     .then((res) => res.body)
     .catch((err) => {
       const errMessage = err.response?.body?.error?.title
