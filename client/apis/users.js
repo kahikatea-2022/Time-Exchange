@@ -29,3 +29,15 @@ export function getUserRoles(id) {
     return res.body.roles
   })
 }
+
+export function checkUsername(username) {
+  return request
+    .get(rootUrl + '/user/check')
+    .set({ Accept: 'application/json' })
+    .send({ username })
+    .then((res) => res.body)
+    .catch((err) => {
+      const errMessage = err.response?.body?.error?.title
+      throw new Error(errMessage || err.message)
+    })
+}
