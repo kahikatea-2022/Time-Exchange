@@ -2,12 +2,30 @@ import { setUser } from './actions/user'
 import { getUserRoles } from './apis/users'
 import store from './store'
 
+const tempFakeData = {
+  about: 'about me...',
+  skills: [
+    {
+      id: 3,
+      category: 'Sports',
+      skill: 'skateboarding',
+      role: 'learn',
+    },
+    {
+      id: 4,
+      category: 'Arts and Crafts',
+      skill: 'oil painting',
+      role: 'teach',
+    },
+  ],
+}
 const emptyUser = {
   auth0Id: '',
   email: '',
   name: '',
   token: '',
   roles: [],
+  ...tempFakeData,
 }
 
 function saveUser(user = emptyUser) {
@@ -26,6 +44,7 @@ export async function cacheUser(useAuth0) {
         name: user.nickname,
         token,
         roles,
+        ...tempFakeData,
       }
       saveUser(userToSave)
     } catch (err) {
