@@ -1,0 +1,12 @@
+@use '../theme';
+@use '../mediaQuery';
+
+.profile {
+  &-container {
+    display: flex;
+  }
+
+  &-column {
+    flex: 1 1 100%;
+  }
+}

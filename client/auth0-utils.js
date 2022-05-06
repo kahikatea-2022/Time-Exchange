@@ -18,14 +18,14 @@ function saveUser(user = emptyUser) {
 }
 
 export async function cacheUser(useAuth0) {
-  const { isAuthenticated, getAccessTokenSilently } = useAuth0()
+  const { isAuthenticated, getAccessTokenSilently, user } = useAuth0()
   if (isAuthenticated) {
     try {
       const token = await getAccessTokenSilently()
 
-      const user = await getUser(token)
+      const apiUser = await getUser(token)
 
-      saveUser(user)
+      saveUser({ ...apiUser, picture: user.picture })
     } catch (err) {
       console.error(err)
     }
