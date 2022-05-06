@@ -38,10 +38,10 @@ const testAuthHeader = {
   Authorization: `Bearer ${token}`,
 }
 
-describe('POST /api/v1/users', () => {
+describe('POST /api/v1/user', () => {
   it('responds with status 401 when no token is passed', () => {
     return request(server)
-      .post(`/api/v1/users`)
+      .post(`/api/v1/user`)
       .send(newUser)
       .then((res) => {
         expect(res.status).toBe(401)
@@ -58,7 +58,7 @@ describe('POST /api/v1/users', () => {
     })
 
     return request(server)
-      .post(`/api/v1/users`)
+      .post(`/api/v1/user`)
       .set(testAuthHeader)
       .send(newUser)
       .expect(201)

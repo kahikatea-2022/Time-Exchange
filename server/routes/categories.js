@@ -1,6 +1,5 @@
 // Imports
 const express = require('express')
-const { checkJwt } = require('../auth0')
 
 // db functions
 
@@ -10,8 +9,8 @@ module.exports = router
 
 //-- ROUTES
 
-// GET /api/v1/users (protected)
-router.get('/', checkJwt, async (req, res) => {
+// GET /api/v1/categories
+router.get('/', async (req, res) => {
   try {
     res.sendStatus(200)
   } catch (error) {
