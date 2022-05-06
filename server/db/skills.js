@@ -25,7 +25,13 @@ function getSkillsByUserId(id, db = connection) {
 
 function getAllSkills(db = connection) {
   return db('skills')
-    .select(['categories.name', 'skills.skill', 'skills.role'])
+    .select([
+      'skills.id',
+      'skills.user_id',
+      'categories.name as category',
+      'skills.skill',
+      'skills.role',
+    ])
     .join('categories', 'skills.category_id', 'categories.id')
 }
 

@@ -68,7 +68,6 @@ function getUsers(db = connection) {
   return db('users')
     .select(
       'id',
-      'auth0_id as auth0Id',
       'first_name as firstName',
       'last_name as lastName',
       'username',
