@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { getLoginFn, getLogoutFn, getRegisterFn } from '../../auth0-utils'
 import {
@@ -7,7 +7,12 @@ import {
 } from '../Authenticated/Authenticated'
 import { useSelector } from 'react-redux'
 
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
+
+ 
 function Nav() {
+  const [open, setOpen] = useState(false)
   const user = useSelector((state) => state.user)
   const login = getLoginFn(useAuth0)
   const logout = getLogoutFn(useAuth0)
@@ -28,36 +33,42 @@ function Nav() {
     register()
   }
 
+  const toggleMenu = () => {
+    setOpen(!open)
+  }
+
   return (
-    <nav>
-      <h1 className="logo">Full-stack Boilerplate with Auth0</h1>
-      <section className="nav-item">
-        <IfAuthenticated>
-          <p>
-            Hello, {user.name} {user.roles ? `(${user.roles})` : null}
-          </p>
-          <section className="sign">
-            <a href="/" onClick={handleLogoff} className="nav-link">
-              Log out
-            </a>
-          </section>
-        </IfAuthenticated>
-        <IfNotAuthenticated>
-          {/* <section className='nav-item'> */}
-          <p>Hello, guest</p>
-          <section className="sign">
-            <a href="/" onClick={handleLogin} className="nav-link">
-              Sign in
-            </a>
-            <a href="/" onClick={handleRegister} className="nav-link">
-              Register
-            </a>
-          </section>
-          {/* </section> */}
-        </IfNotAuthenticated>
-      </section>
+    <nav className='nav-menu'>
+            <div className="hamburger-container" onClick={toggleMenu}>
+              <GiHamburgerMenu className='hamburger' onClick={toggleMenu} />
+            </div>
+            {open && (
+          <ul  className='main-nav'>
+            <IfAuthenticated>
+                <li className="nav-item"><Link to='/myprofile'>Search</Link></li>
+                <li className="nav-item"><Link to='/myprofile'>My Profile</Link></li>
+                <li className="nav-item"><a href='/' onClick={handleLogoff}>Logout</a></li>
+            </IfAuthenticated>
+
+            <IfNotAuthenticated>
+              <li className="nav-item"><a href='/' onClick={handleLogin}>Login</a></li>
+              <li className="nav-item"><a href='/' onClick={handleRegister}>Register</a></li>
+            </IfNotAuthenticated>
+     
+          </ul>
+        
+        )}
     </nav>
   )
 }
 
 export default Nav
+
+
+// IF not logged in links:
+// Sign in
+// Register
+// IF logged in links:
+// Logout
+// My Profile
+// Find friends/teachers/students/what ever you want to call it
