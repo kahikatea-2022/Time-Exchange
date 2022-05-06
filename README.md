@@ -177,29 +177,28 @@ Response (200):
 Reponse (200):
 ```json
 {
-  "users" : [
-  
+  "users": [
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "username": "jDoe110",
+      "email": "j.d@email.com",
+      "about": "about me...",
+      "skills": [
+        {
+          "category": "Sport",
+          "skill": "skateboarding",
+          "role": "learn"
+        },
+        {
+          "category": "Arts and Crafts",
+          "skill": "oil painting",
+          "role": "learn"
+        }
+      ]
+    }
   ]
 }
-  {
-  "id": 1
-  "username": "jDoe110",
-  "email": "j.d@email.com",
-  "about": "about me...",
-  "skills": [
-    {
-      "id": 3,
-      "category": "Sport",
-      "skill": "skateboarding",
-      "role": "learn"
-    },
-    {
-      "id": 4,
-      "category": "Arts and Crafts",
-      "skill": "oil painting",
-      "role": "teach"
-    },
-  ]
 ```
 ---
 
