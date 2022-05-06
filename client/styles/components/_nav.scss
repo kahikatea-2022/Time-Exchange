@@ -2,7 +2,7 @@
 @use '../mediaQuery';
 
 body {
-  background-color: aqua;
+  background-color: white;
 }
 .hamburger-container {
   display: flex;
@@ -11,30 +11,39 @@ body {
 }
 .hamburger {
   font-size: 50px;
+  z-index: 2;
+  color: #083d77;
 }
 .nav-menu {
   margin: 0;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+  position: relative;
+
 }
 
 ul {
   list-style: none;
+  
 }
 a {
   text-decoration: none;
+  color: #083d77;
 }
 .main-nav {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: column;
- 
+  position: absolute;
+  margin-top: 40px;
+  user-select: none;
 }
 .nav-item {
   text-align: center;
   font-size: 25px;
   font-weight: 600;
   margin: 20px;
+  line-height: 0.5;
 }
