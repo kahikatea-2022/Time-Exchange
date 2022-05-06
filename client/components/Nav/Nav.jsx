@@ -8,6 +8,7 @@ import {
 import { useSelector } from 'react-redux'
 
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
 
  
 function Nav() {
@@ -37,42 +38,27 @@ function Nav() {
   }
 
   return (
-    <nav>
-            <div className="hamburger" onClick={toggleMenu}>
-              <GiHamburgerMenu />
-            <h1 className="logo">Full-stack Boilerplate with Auth0</h1>
+    <nav className='nav-menu'>
+            <div className="hamburger-container" onClick={toggleMenu}>
+              <GiHamburgerMenu className='hamburger' onClick={toggleMenu} />
             </div>
             {open && (
-      <>
+          <ul  className='main-nav'>
             <IfAuthenticated>
-              <p>
-                Hello, {user.name} {user.roles ? `(${user.roles})` : null}
-              </p>
-          
-                <a href="/" onClick={handleLogoff} className="nav-link">
-                  Log out
-                </a>
-                <a href="/" onClick={handleLogoff} className="nav-link">
-                  My profile
-                </a>
-         
+                <li className="nav-item"><Link to='/myprofile'>Search</Link></li>
+                <li className="nav-item"><Link to='/myprofile'>My Profile</Link></li>
+                <li className="nav-item"><a href='/' onClick={handleLogoff}>Logout</a></li>
             </IfAuthenticated>
+
             <IfNotAuthenticated>
-            
-              <p>Hello, guest</p>
-          
-                <a href="/" onClick={handleLogin} className="nav-link">
-                  Sign in
-                </a>
-                <a href="/" onClick={handleRegister} className="nav-link">
-                  Register
-                </a>
-      
+              <li className="nav-item"><a href='/' onClick={handleLogin}>Login</a></li>
+              <li className="nav-item"><a href='/' onClick={handleRegister}>Register</a></li>
             </IfNotAuthenticated>
      
-      </>
+          </ul>
+        
         )}
-  </nav>
+    </nav>
   )
 }
 

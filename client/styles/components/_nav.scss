@@ -1,8 +1,40 @@
 @use '../theme';
 @use '../mediaQuery';
 
-// styles for the nav component here
+body {
+  background-color: aqua;
+}
+.hamburger-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.hamburger {
+  font-size: 50px;
+}
+.nav-menu {
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
 
-header {
-  background-color: theme.$header-background;
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+ 
+}
+.nav-item {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 20px;
 }
