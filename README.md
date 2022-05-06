@@ -179,6 +179,7 @@ Reponse (200):
 {
   "users": [
     {
+      "id": 1
       "firstName": "John",
       "lastName": "Doe",
       "username": "jDoe110",
@@ -186,11 +187,13 @@ Reponse (200):
       "about": "about me...",
       "skills": [
         {
+          "id" : 3,
           "category": "Sport",
           "skill": "skateboarding",
           "role": "learn"
         },
         {
+          "id" : 4,
           "category": "Arts and Crafts",
           "skill": "oil painting",
           "role": "learn"
