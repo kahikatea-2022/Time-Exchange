@@ -62,9 +62,20 @@ Add information about permissions here
 
 ---
 
-## 4. API Routes (TBC)
+## 4. API Routes (proposal)
 
-Failure response (HTTP status: 500):
+Method | Endpoint | Protected | Description 
+--- | --- | --- | --- 
+POST | /api/v1/user | True | Create new user
+GET | /api/v1/user | True | returns current logged in user details
+GET | /api/v1/user/check  | False | returns true if users is unique, otherwise false
+GET | /api/v1/categories  | False | returns all the skill categories
+GET | /api/v1/users  | True | returns all user details
+
+
+**Protected**: Can only be accessed once they've been signed into Auth0. Bearer token needs to be passed with the request.
+
+**Failure response** (HTTP status: 500):
 
 ```json
 {
@@ -74,19 +85,121 @@ Failure response (HTTP status: 500):
 }
 ```
 
-### `GET /api/v1/example`
+### `POST /api/v1/user` (protected)
 
-Response (200):
-
+Request: 
 ```json
 {
-  "example": [
+  "firstName": "John",
+  "lastName": "Doe",
+  "username": "jDoe110",
+  "email": "j.d@email.com",
+  "about": "about me...",
+  "skills": [
     {
-      "id": 1,
-      "name": "example",
+      "category": 1,
+      "skill": "skateboarding",
+      "role": "learn"
+    },
+    {
+      "category": 2,
+      "skill": "oil painting",
+      "role": "teach"
+    },
+  ]
+}
+```
+
+Response (201)
+
+### `GET /api/v1/user` (protected)
+
+Reponse (200):
+```json
+{
+  "id": 1
+  "auth0Id": "auth0|62734d140b600f00693e3f50"
+  "firstName": "John",
+  "lastName": "Doe",
+  "username": "jDoe110",
+  "email": "j.d@email.com",
+  "about": "about me...",
+  "skills": [
+    {
+      "id": 3,
+      "category": "Sports",
+      "skill": "skateboarding",
+      "role": "learn"
+    },
+    {
+      "id": 4,
+      "category": "Arts and Crafts",
+      "skill": "oil painting",
+      "role": "teach"
+    },
+  ]
+}
+```
+
+### `GET /api/v1/user/check`
+
+Request:
+```json
+{
+  "username" : "jDoe110"
+}
+```
+
+Response (200):
+```json
+{
+  "username" : true
+}
+```
+
+### `GET /api/v1/categories`
+
+Response (200):
+```json
+{
+  "categories" : [
+    {
+      "id" 1,
+      "name" : "Sports",
     }
   ]
 }
+```
+
+### `GET /api/v1/users` (protected)
+
+Response (200):
+Reponse (200):
+```json
+{
+  "users" : [
+  
+  ]
+}
+  {
+  "id": 1
+  "username": "jDoe110",
+  "email": "j.d@email.com",
+  "about": "about me...",
+  "skills": [
+    {
+      "id": 3,
+      "category": "Sport",
+      "skill": "skateboarding",
+      "role": "learn"
+    },
+    {
+      "id": 4,
+      "category": "Arts and Crafts",
+      "skill": "oil painting",
+      "role": "teach"
+    },
+  ]
 ```
 
 ---
