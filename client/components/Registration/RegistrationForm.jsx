@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { addUser } from '../../apis/users'
 
-function Registration() {
+function RegistrationForm() {
   const user = useSelector((state) => state.user)
   const navigate = useNavigate()
 
@@ -85,4 +85,4 @@ function Registration() {
   )
 }
 
-export default Registration
+export default RegistrationForm

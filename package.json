@@ -47,11 +47,14 @@
     "express": "^4.17.2",
     "express-jwt": "^6.1.0",
     "express-jwt-authz": "^2.4.1",
+    "formik": "^2.2.9",
     "jwks-rsa": "^2.0.4",
     "knex": "^1.0.3",
+    "lodash": "^4.17.21",
     "pg": "^8.7.1",
     "react-icons": "^4.3.1",
-    "superagent": "7.1.1"
+    "superagent": "7.1.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.15.6",
