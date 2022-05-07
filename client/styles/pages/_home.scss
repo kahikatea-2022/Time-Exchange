@@ -1,17 +1,112 @@
 @use '../theme';
 @use '../mediaQuery';
-
-// examples
-.about-section {
-  color: theme.$primary;
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chewy&family=Courgette&display=swap');
+body {
+  //background-color: #EBEFE7;
+  background-image: url("/server/public/bground.jpg");
+  
 }
-.container {
+.page-container {
+  margin: 0 auto;
+  width: 1600px;
+  // border: 3px solid black;
+  
+}
+.main-content-container {
+  display: flexbox;
+  justify-content: center;
+  // border: 1px solid orange;
+  border-radius: 25px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  // background-color: #EBEFE7;
+  // -webkit-box-shadow: 0px 0px 7px 0px white; 
+  box-shadow: 0px 0px 7px 0px white;
+  background-color: rgb(235, 239, 231, 0.5);
+}
+.slogan-image-container {
   display: flex;
-  flex-direction: row;
-  @include mediaQuery.media-queries(desktop, min) {
-    flex-direction: column;
-  }
+  justify-content: center;
+  //border: 1px solid green;
 }
+.slogan-container {
+  display: flex;
+  justify-content: space-evenly; 
+  margin-bottom: 10px;
+  //border: 1px solid pink;
+  border-radius: 25px;
+  width: 100%;
+  height: 350px;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid purple;
+  border-radius: 25px;
+  width: 50%;
+}
+#slogan {
+  font-size: 90px;
+  font-family: 'Shrikhand', cursive;
+  color: #390345;
+  user-select: none;
+  letter-spacing: 5px;
+  text-align: center;
+  -webkit-text-stroke: 0.5px white;
+}
+#image {
+  width: 50%;
+  user-select: none;
+}
+.app-blurb-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  //border: 2px solid red;
+  width: 100%;
+  height: 400px;
+}
+.blurb-text {
+ // border: 1px solid yellow;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  font-size: 1.6rem;
+  background-color: #D0BBFC;
+  border-radius: 400px / 200px;
+  color: #363636;
+  //color: #390345;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about-app {
+  margin: 50px;
+  font-family: 'Cantarell', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+.reviews-container {
+  display: flex;
+  background-color: lightblue;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews-container div {
+  background-color: yellow;
+  align-items: center;
+  margin: 20px;
+  width: 100%;
+  height: 100px;
+}
+
 
 // styles for the home page here
 // delete the above example
