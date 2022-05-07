@@ -10,7 +10,7 @@ function initalSkillArray (n, role) {
   return Array.from({length: n}, () => ({role, skill: '', category: ''}))
 }
 
-function Registration({title = "Registration"}) {
+function Registration() {
 
   const redirect = useNavigate()
   const user = useSelector(state => state.user)
@@ -45,7 +45,7 @@ function Registration({title = "Registration"}) {
   return (
     <div>
       {/* error div goes here */}
-      <h1>{title}</h1>
+      <h1>{user.id ? "Edit My Profile" : "Registration"}</h1>
       <form onSubmit={handleSubmit}>
         <BioForm setBio={setBio} bio={bio} />
         <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
