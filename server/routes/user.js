@@ -42,7 +42,7 @@ router.get('/', checkJwt, async (req, res) => {
   try {
     const auth0Id = req.user?.sub
     const user = await getUserByAuth(auth0Id)
-    const skills = await getSkillsByUserId(user.id)
+    const skills = user ? await getSkillsByUserId(user.id) : {}
     res.status(200).json({ ...user, skills })
   } catch (error) {
     console.log(error)
