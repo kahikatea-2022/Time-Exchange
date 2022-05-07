@@ -8,30 +8,32 @@ function MyProfile() {
   const learn = user.skills.filter((x) => x.role === 'learn')
 
   return (
-    <React.Fragment>
-      <h2>MyProfile</h2>
+    <div className='page-container'>
+      <h2>My Profile</h2>
       <div className="profile-container">
         <div className="profile-column">
-          <div>Welcome {user.firstName}!</div>
-          <img src={user.picture} alt={user.firstName} />
-          <div>{user.about}</div>
+          <div className="profile-card">
+            <div className="profile-welcome">Welcome {user.firstName}!</div>
+            <img src={user.picture} alt={user.firstName} />
+            <div className="profile-about">{user.about}</div>
+          </div>
         </div>
         <div className="profile-column">
-          <div>
-            <h5>Teach</h5>
+          <div className="profile-card">
+            <h4>I can TEACH:</h4>
             {teach.map((x) => (
-              <div key={x.id}>{x.skill}</div>
+              <div className="profile-skill" key={x.id}>{x.skill}</div>
             ))}
           </div>
-          <div>
-            <h5>Learn</h5>
+          <div className="profile-card">
+            <h4>I want to LEARN:</h4>
             {learn.map((x) => (
-              <div key={x.id}>{x.skill}</div>
+              <div className="profile-skill" key={x.id}>{x.skill}</div>
             ))}
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </div>
   )
 }
 
