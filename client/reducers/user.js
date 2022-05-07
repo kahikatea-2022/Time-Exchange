@@ -8,7 +8,7 @@ const emptyUser = {
   username: '',
   email: '',
   about: '',
-  skills: {},
+  skills: [],
   token: '',
   picture: '', //not used in db
 }

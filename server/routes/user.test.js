@@ -50,7 +50,6 @@ describe('POST /api/v1/user', () => {
   })
   it('responds with status 200', () => {
     dbUsers.addUser.mockImplementation((user) => {
-      console.log(user.auth0Id)
       return Promise.resolve([2])
     })
     dbSkills.addUserSkills.mockImplementation((id, skills) => {

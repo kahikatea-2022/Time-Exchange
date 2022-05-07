@@ -10,7 +10,8 @@ function initalSkillArray (n, role) {
   return Array.from({length: n}, () => ({role, skill: '', category: ''}))
 }
 
-function Registration() {
+function Registration({title = "Registration"}) {
+
   const redirect = useNavigate()
   const user = useSelector(state => state.user)
   const [bio, setBio] = useState(() => {}) 
@@ -24,7 +25,14 @@ function Registration() {
   },[])
 
   useEffect(() => {
-    setBio({email: user.email})
+    setBio({firstName: user.firstName, lastName: user.lastName, username: user.username, email: user.email, about: user.about})
+    if (user.skills.length > 0) {
+      // NOT DRY - Refactor!!!!
+      const currentLearn = user.skills.filter(skill => skill.role === 'learn')
+      const currentTeach = user.skills.filter(skill => skill.role === 'teach')
+      setLearn([...currentLearn, ...learn.slice(currentLearn.length)])
+      setTeach([...currentTeach, ...learn.slice(currentTeach.length)])
+    }
   }, [user])
 
   //get user details from API for edit
@@ -32,13 +40,12 @@ function Registration() {
   function handleSubmit (event) {
     event.preventDefault()
     const userDetails = {...bio, skills: [...learn.filter(skill => skill.skill !== ''), ...teach.filter(skill => skill.skill !== '')]}
-    console.log(userDetails)
-    const error = saveUser(userDetails, user.token, redirect)
+    const error = saveUser(userDetails, user.token, redirect) //error not used
   }
   return (
     <div>
       {/* error div goes here */}
-      <h1>Register</h1>
+      <h1>{title}</h1>
       <form onSubmit={handleSubmit}>
         <BioForm setBio={setBio} bio={bio} />
         <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
