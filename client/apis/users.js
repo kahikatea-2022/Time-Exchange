@@ -57,3 +57,27 @@ export function checkUsername(username) {
       throw new Error(errMessage || err.message)
     })
 }
+
+export function getTeachers(token) {
+  return request
+    .get(rootUrl + '/users/teachers')
+    .set('authorization', `Bearer ${token}`)
+    .set({ Accept: 'application/json' })
+    .then((res) => res.body.users)
+    .catch((err) => {
+      const errMessage = err.response?.body?.error?.title
+      throw new Error(errMessage || err.message)
+    })
+}
+
+export function getLearners(token) {
+  return request
+    .get(rootUrl + '/users/learners')
+    .set('authorization', `Bearer ${token}`)
+    .set({ Accept: 'application/json' })
+    .then((res) => res.body.users)
+    .catch((err) => {
+      const errMessage = err.response?.body?.error?.title
+      throw new Error(errMessage || err.message)
+    })
+}
