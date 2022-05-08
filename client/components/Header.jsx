@@ -8,7 +8,7 @@ function Header() {
       <>
       <div className='header-container'>
         
-        <a href='/'><h1 className="header-title">Karma</h1></a>
+        <a id="nav-link" href='/'><h1 className="header-title">Karma</h1></a>
         
       </div>
       <Nav />
