@@ -50,8 +50,6 @@ function Registration() {
       ...learn.filter(skill => skill.skill !== '').map(skill => ({...skill, category: categoryNameToId(skill.category)})),
       ...teach.filter(skill => skill.skill !== '').map(skill => ({...skill, category: categoryNameToId(skill.category)})),
     ]
-    console.log("SKILLS")
-    console.log(skills)
     const userDetails = {...bio, skills}
     const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }

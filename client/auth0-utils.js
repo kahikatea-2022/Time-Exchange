@@ -25,7 +25,6 @@ export async function cacheUser(useAuth0) {
         email: user.email,
         token,
       }
-      console.log(`auth0id ${user.sub}`)
       saveUser(userToSave)
     } catch (err) {
       console.error(err)
