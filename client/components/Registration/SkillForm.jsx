@@ -18,9 +18,9 @@ function SkillForm({role, changeFunct, array, categories, required = false}) {
           <label htmlFor={`learn${index}skill`}>Skill</label>
           <input name={`learn${index}skill`} type='text' onChange={(e) => handleChange(e, index, "skill")} value={array[index].skill } required={index === 0 && required}/>
           <label htmlFor={`learn${index}category`}>Category</label>
-          <select name={`learn${index}category`} onChange={(e) => handleChange(e, index, "category")} value={array[index].category } >
+          <select name={`learn${index}category`} onChange={(e) => handleChange(e, index, "category")} value={array[index].category} >
             {categories.map((category) => (
-              <option value={category.id} key={category.id}>{category.name}</option>
+              <option value={category.name} key={category.id}>{category.name}</option>
             ))}
           </select>
         </div>

@@ -1,5 +1,7 @@
+import { fetchUser } from '../actions/user'
 import { getCategories } from '../apis/categories'
-import { getUser, addUser } from '../apis/users'
+import { addUser, updateUser } from '../apis/users'
+import store from '../store'
 
 export async function fetchCategories(setCategories) {
   try {
@@ -13,10 +15,11 @@ export async function fetchCategories(setCategories) {
   // finally dispatch not waiting
 }
 
-export async function saveUser(user, token, redirect) {
+export async function saveUser(user, token, redirect, update) {
   try {
     // dispatch waiting
-    await addUser(user, token)
+    update ? updateUser(user, token) : await addUser(user, token)
+    store.dispatch(fetchUser(token))
     redirect('/myprofile')
     return null
   } catch (error) {
@@ -25,22 +28,3 @@ export async function saveUser(user, token, redirect) {
   }
   // finally dispatch not waiting
 }
-
-// export async function fetchUserDetails(
-//   user,
-//   setUser,
-//   learn,
-//   setLearn,
-//   teach,
-//   setTeach,
-//   token
-// ) {
-//   try {
-//     // dispatch waiting
-//     const details = await getUser(token)
-//     setUser({...user, details.firstName, details.lastName, username, email, about})
-//   } catch (err) {
-//     console.log('fetchCategories ERROR')
-//     console.log(err)
-//   }
-// }

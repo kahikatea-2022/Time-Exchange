@@ -3,14 +3,10 @@ import { getUser } from './apis/users'
 import store from './store'
 
 const emptyUser = {
-  about: '',
   auth0Id: '',
   email: '',
-  firstName: '',
-  id: -1,
-  lastName: '',
-  skills: [],
-  username: '',
+  token: '',
+  picture: '',
 }
 
 function saveUser(user = emptyUser) {
@@ -22,15 +18,14 @@ export async function cacheUser(useAuth0) {
   if (isAuthenticated) {
     try {
       const token = await getAccessTokenSilently()
-
-      const apiUser = await getUser(token)
-
+      const savedData = await getUser(token)
       const userToSave = {
-        ...apiUser,
+        ...savedData,
         auth0Id: user.sub,
         email: user.email,
         token,
       }
+      console.log(`auth0id ${user.sub}`)
       saveUser(userToSave)
     } catch (err) {
       console.error(err)
