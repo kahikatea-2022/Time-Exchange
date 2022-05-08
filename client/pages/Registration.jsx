@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import BioForm from '../components/Registration/BioFrom'
 import SkillForm from '../components/Registration/SkillForm'
@@ -11,6 +11,9 @@ function initalSkillArray (n, role) {
 }
 
 function Registration() {
+
+  const { pathname } = useLocation();
+  const title = pathname.includes("registration") ? "Registration" : "Edit profile"
 
   const redirect = useNavigate()
   const user = useSelector(state => state.user)
@@ -56,7 +59,7 @@ function Registration() {
   return (
     <div>
       {/* error div goes here */}
-      <h1>{user.id ? "Edit My Profile" : "Registration"}</h1>
+      <h1>{title}</h1>
       <form onSubmit={handleSubmit}>
         <BioForm setBio={setBio} bio={bio} />
         <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
