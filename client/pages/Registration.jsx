@@ -37,6 +37,9 @@ function Registration() {
       setLearn([...currentLearn, ...learn.slice(currentLearn.length)])
       setTeach([...currentTeach, ...learn.slice(currentTeach.length)])
     }
+    if (user.id) {
+      redirect('/myprofile/edit')
+    }
   }, [user])
 
   //get user details from API for edit
