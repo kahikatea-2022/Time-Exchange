@@ -45,9 +45,12 @@ function Nav() {
             {open && (
           <ul  className='main-nav'>
             <IfAuthenticated>
-                <li className="nav-item"><a href='/' onClick={handleLogoff}>Logout</a></li>
-                <li className="nav-item"><Link to='/myprofile'>Search</Link></li>
+                
+                <li className="nav-item"><Link to='/results/learners'>Learn</Link></li>
+                <li className="nav-item"><Link to='/results/teachers'>Teach</Link></li>
+                
                 <li className="nav-item"><Link to='/myprofile'>My Profile</Link></li>
+                <li className="nav-item"><a href='/' onClick={handleLogoff}>Logout</a></li>
                 
             </IfAuthenticated>
 
