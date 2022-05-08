@@ -3,8 +3,17 @@ const express = require('express')
 const { checkJwt } = require('../auth0')
 
 // db functions
-const { addUser, checkExists, getUserByAuth } = require('../db/users')
-const { addUserSkills, getSkillsByUserId } = require('../db/skills')
+const {
+  addUser,
+  checkExists,
+  getUserByAuth,
+  updateUser,
+} = require('../db/users')
+const {
+  addUserSkills,
+  getSkillsByUserId,
+  updateUserSkills,
+} = require('../db/skills')
 
 // Setup
 const router = express.Router()
@@ -32,6 +41,32 @@ router.post('/', checkJwt, async (req, res) => {
     res.status(500).json({
       error: {
         title: "Couldn't add user",
+      },
+    })
+  }
+})
+
+// PUT /api/v1/user (protected)
+router.put('/', checkJwt, async (req, res) => {
+  try {
+    const auth0Id = req.user?.sub
+    const user = req.body
+    await updateUser({
+      auth0Id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      username: user.username,
+      email: user.email,
+      about: user.about,
+    })
+    const { id } = await getUserByAuth(auth0Id)
+    await updateUserSkills(id, user.skills)
+    res.sendStatus(201)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      error: {
+        title: "Couldn't update user",
       },
     })
   }
