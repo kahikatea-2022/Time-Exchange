@@ -24,6 +24,7 @@ export async function cacheUser(useAuth0) {
         auth0Id: user.sub,
         email: user.email,
         token,
+        picture: user.picture,
       }
       saveUser(userToSave)
     } catch (err) {
