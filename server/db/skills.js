@@ -12,9 +12,6 @@ function addUserSkills(id, skills, db = connection) {
 }
 
 function getSkillsByUserId(id, db = connection) {
-  console.log('get by if funct')
-  console.log(id)
-  console.log(typeof id)
   return db('skills')
     .select([
       'skills.id',
