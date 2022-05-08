@@ -35,8 +35,22 @@ function getAllSkills(db = connection) {
     .join('categories', 'skills.category_id', 'categories.id')
 }
 
+function getSkillsByRole(role, db = connection) {
+  return db('skills')
+    .select([
+      'skills.id',
+      'skills.user_id',
+      'categories.name as category',
+      'skills.skill',
+      'skills.role',
+    ])
+    .join('categories', 'skills.category_id', 'categories.id')
+    .where('skills.role', role)
+}
+
 module.exports = {
   getSkillsByUserId,
   addUserSkills,
   getAllSkills,
+  getSkillsByRole,
 }

@@ -66,13 +66,15 @@ Add information about permissions here
 
 ## 4. API Routes (proposal)
 
-| Method | Endpoint           | Protected | Description                                               |
-| ------ | ------------------ | --------- | --------------------------------------------------------- |
-| POST   | /api/v1/user       | True      | Create new user                                           |
-| GET    | /api/v1/user       | True      | returns current logged in user details                    |
-| GET    | /api/v1/user/check | False     | returns true if usersname already exists, otherwise false |
-| GET    | /api/v1/categories | False     | returns all the skill categories                          |
-| GET    | /api/v1/users      | True      | returns all user details                                  |
+| Method | Endpoint               | Protected | Description                                               |
+| ------ | ---------------------- | --------- | --------------------------------------------------------- |
+| POST   | /api/v1/user           | True      | Create new user                                           |
+| GET    | /api/v1/user           | True      | returns current logged in user details                    |
+| GET    | /api/v1/user/check     | False     | returns true if usersname already exists, otherwise false |
+| GET    | /api/v1/categories     | False     | returns all the skill categories                          |
+| GET    | /api/v1/users          | True      | returns all user details                                  |
+| GET    | /api/v1/users/teachers | True      | returns all teachers details                              |
+| GET    | /api/v1/users/learners | True      | returns all learners details                              |
 
 **Protected**: Can only be accessed once they've been signed into Auth0. Bearer token needs to be passed with the request.
 
@@ -180,7 +182,72 @@ Response (200):
 ### `GET /api/v1/users` (protected)
 
 Response (200):
-Reponse (200):
+
+```json
+{
+  "users": [
+    {
+      "id": 1
+      "firstName": "John",
+      "lastName": "Doe",
+      "username": "jDoe110",
+      "email": "j.d@email.com",
+      "about": "about me...",
+      "skills": [
+        {
+          "id" : 3,
+          "category": "Sport",
+          "skill": "skateboarding",
+          "role": "learn"
+        },
+        {
+          "id" : 4,
+          "category": "Arts and Crafts",
+          "skill": "oil painting",
+          "role": "learn"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### `GET /api/v1/teachers` (protected)
+
+Response (200):
+
+```json
+{
+  "users": [
+    {
+      "id": 1
+      "firstName": "John",
+      "lastName": "Doe",
+      "username": "jDoe110",
+      "email": "j.d@email.com",
+      "about": "about me...",
+      "skills": [
+        {
+          "id" : 3,
+          "category": "Sport",
+          "skill": "skateboarding",
+          "role": "teach"
+        },
+        {
+          "id" : 4,
+          "category": "Arts and Crafts",
+          "skill": "oil painting",
+          "role": "teach"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### `GET /api/v1/users/learners` (protected)
+
+Response (200):
 
 ```json
 {

@@ -25,7 +25,13 @@ export async function cacheUser(useAuth0) {
 
       const apiUser = await getUser(token)
 
-      saveUser({ ...apiUser, picture: user.picture })
+      const userToSave = {
+        ...apiUser,
+        auth0Id: user.sub,
+        email: user.email,
+        token,
+      }
+      saveUser(userToSave)
     } catch (err) {
       console.error(err)
     }

@@ -57,7 +57,7 @@ router.get('/', checkJwt, async (req, res) => {
 // GET /api/v1/user/check
 router.get('/check', async (req, res) => {
   try {
-    const { username } = req.body // this might accept other checks (e.g.) email in the future
+    const { username } = req.query // this might accept other checks (e.g.) email in the future
     const exists = await checkExists('username', username)
     res.status(200).json({ username: exists })
   } catch (error) {

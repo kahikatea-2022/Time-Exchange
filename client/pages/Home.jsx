@@ -22,13 +22,30 @@ function Home() {
             </div>
         </div>
         <div className='reviews-container'>
-          <div>Box 1 Lorem ipsum, dol
-          or sit amet consectetur adipisicing elit. Odio max
-          ime commodi eligendi, modi dolore soluta rerum ad dicta. 
-          Repellat, neque ad cum amet hic rerum
-          . Quod expedita pariatur libero placeat?</div>
-          <div>Box 2</div>
-          <div>Box 3</div>
+          <div>
+            <h4 className='review-title'>Thanks to David</h4>
+           
+            <p className='review-text'>Great teacher, very patient and really knows
+              how to get learnings across.
+              I am looking forward to continue to learn the Piano
+            </p>
+          </div>
+          <div>
+            <h4 className='review-title'>I learnt Japanese</h4>
+            <p className='review-text'>Had a easy experience connecting with Kim through Karma,
+              Sent an email and organized a time for teachings.
+              Thanks to Karma I now know the basics of a language
+              I otherwise would not have learnt.
+            </p>
+          </div>
+          <div>
+            <h4 className='review-title'>I love Teaching - Thanks Karma</h4>
+            <p className='review-text'>I have been using Karma for just over 3 months now,
+              And can not believe the connections I have made with people who 
+              have the same passion for the things that I do.
+              
+            </p>
+          </div>
         </div>
       </div>
     </div>
