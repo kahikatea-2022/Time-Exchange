@@ -48,9 +48,24 @@ function getSkillsByRole(role, db = connection) {
     .where('skills.role', role)
 }
 
+async function updateUserSkills(id, skills) {
+  try {
+    await deleteUsersSkills(id)
+    return addUserSkills(id, skills)
+  } catch (error) {
+    return Promise.reject(error)
+  }
+}
+
+function deleteUsersSkills(id, db = connection) {
+  return db('skills').where('user_id', id).del()
+}
+
 module.exports = {
   getSkillsByUserId,
   addUserSkills,
   getAllSkills,
   getSkillsByRole,
+  deleteUsersSkills,
+  updateUserSkills,
 }

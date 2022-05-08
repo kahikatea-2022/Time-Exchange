@@ -14,6 +14,7 @@ export function getUsers(token) {
     })
 }
 
+
 export function getUser(token) {
   return request
     .get(rootUrl + '/user')
@@ -37,6 +38,21 @@ export function addUser(user, token) {
       const errMessage = err.response?.body?.error?.title
       throw new Error(errMessage || err.message)
     })
+}
+
+export function updateUser(user, token) {
+  return (
+    request
+      .put(rootUrl + '/user')
+      .set('authorization', `Bearer ${token}`)
+      .set({ Accept: 'application/json' })
+      .send(user)
+      // .then((res) => res.body)
+      .catch((err) => {
+        const errMessage = err.response?.body?.error?.title
+        throw new Error(errMessage || err.message)
+      })
+  )
 }
 
 // Not currently used
