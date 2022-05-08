@@ -6,6 +6,7 @@ const emptyUser = {
   auth0Id: '',
   email: '',
   token: '',
+  picture: '',
 }
 
 function saveUser(user = emptyUser) {
