@@ -62,7 +62,6 @@ describe('POST /api/v1/user', () => {
       .send(newUser)
       .expect(201)
       .then((res) => {
-        console.log(res.body)
         expect(res.body.id).toBe(2)
         return null
       })

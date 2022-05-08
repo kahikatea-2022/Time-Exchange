@@ -20,6 +20,10 @@ function Registration() {
   // const [errors, setErrors] = useState(() => [])
   const [ categories, setCategories] = useState([])
 
+  function categoryNameToId (name) {
+    return categories.find((category) => category.name == name)?.id || 1
+  }
+
   useEffect(() => {
     fetchCategories(setCategories)
   },[])
@@ -39,8 +43,14 @@ function Registration() {
 
   function handleSubmit (event) {
     event.preventDefault()
-    const userDetails = {...bio, skills: [...learn.filter(skill => skill.skill !== ''), ...teach.filter(skill => skill.skill !== '')]}
-    const error = saveUser(userDetails, user.token, redirect) //error not used
+    const skills = [
+      ...learn.filter(skill => skill.skill !== '').map(skill => ({...skill, category: categoryNameToId(skill.category)})),
+      ...teach.filter(skill => skill.skill !== '').map(skill => ({...skill, category: categoryNameToId(skill.category)})),
+    ]
+    console.log("SKILLS")
+    console.log(skills)
+    const userDetails = {...bio, skills}
+    const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }
   return (
     <div>
@@ -50,7 +60,7 @@ function Registration() {
         <BioForm setBio={setBio} bio={bio} />
         <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
         <SkillForm role='teach' changeFunct={setTeach} array={teach} categories={categories} required={true}/>
-        <button type='submit'>Register</button>
+        <button type='submit'>{user.id ? "Update" : "Register"}</button>
       </form>
     </div>
   )

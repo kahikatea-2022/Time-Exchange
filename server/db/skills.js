@@ -12,6 +12,9 @@ function addUserSkills(id, skills, db = connection) {
 }
 
 function getSkillsByUserId(id, db = connection) {
+  console.log('get by if funct')
+  console.log(id)
+  console.log(typeof id)
   return db('skills')
     .select([
       'skills.id',
@@ -58,8 +61,6 @@ async function updateUserSkills(id, skills) {
 }
 
 function deleteUsersSkills(id, db = connection) {
-  console.log('DELL BEING CALLED')
-  console.log(id)
   return db('skills').where('user_id', id).del()
 }
 
