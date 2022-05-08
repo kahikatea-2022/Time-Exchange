@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import MyProfile from './pages/MyProfile'
+import Results from './pages/Results'
 
 function App() {
   cacheUser(useAuth0)
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/results/:type" element={<Results />} />
       </Routes>
     </div>
   )
