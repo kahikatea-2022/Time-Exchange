@@ -12,9 +12,8 @@ function Header() {
         
       </div>
       <Nav />
-      </>
-      )
+    </>
+  )
 }
 
 export default Header
-

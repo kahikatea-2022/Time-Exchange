@@ -5,9 +5,9 @@ const reducer = (state = false, action) => {
     case SET_WAITING:
       return true
     case UNSET_WAITING:
-      return false  
+      return false
     default:
-      return state  
+      return state
   }
 }
 
