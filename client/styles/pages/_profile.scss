@@ -12,12 +12,11 @@
   $spacer: 50px;
 
   &-container {
-    display: flex 
+    display: flex;
   }
 
   &-column {
     flex: 1 1 100%;
-
   }
 
   &-column + &-column {
@@ -30,7 +29,7 @@
     padding: 30px;
     font-family: 'Cantarell', sans-serif;
     font-weight: 100;
-    font-size: 24px; 
+    font-size: 24px;
   }
 
   &-card + &-card {
@@ -55,11 +54,9 @@
   }
 }
 
-
 h2 {
   font-family: 'Shrikhand', cursive;
   font-size: 50px;
-
 }
 h4 {
   margin-top: 0;

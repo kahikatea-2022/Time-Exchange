@@ -37,18 +37,25 @@ function Nav() {
   }
 
   return (
-    <nav className='nav-menu'>
-            <div className="hamburger-container" onClick={toggleMenu}>
-              <GiHamburgerMenu className='hamburger' onClick={toggleMenu} />
-            </div>
-            {open && (
-          <ul  className='main-nav'>
-            <IfAuthenticated>
-                <li className="nav-item"><a href='/' onClick={handleLogoff}>Logout</a></li>
-                <li className="nav-item"><Link to='/myprofile'>Search</Link></li>
-                <li className="nav-item"><Link to='/myprofile'>My Profile</Link></li>
-                
-            </IfAuthenticated>
+    <nav className="nav-menu">
+      <div className="hamburger-container" onClick={toggleMenu}>
+        <GiHamburgerMenu className="hamburger" onClick={toggleMenu} />
+      </div>
+      {open && (
+        <ul className="main-nav">
+          <IfAuthenticated>
+            <li className="nav-item">
+              <a href="/" onClick={handleLogoff}>
+                Logout
+              </a>
+            </li>
+            <li className="nav-item">
+              <Link to="/myprofile">Search</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/myprofile">My Profile</Link>
+            </li>
+          </IfAuthenticated>
 
           <IfNotAuthenticated>
             <li className="nav-item">
