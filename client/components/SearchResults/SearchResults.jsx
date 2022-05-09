@@ -3,9 +3,8 @@ import React from 'react'
 function UserResults({ user, title }) {
   return (
     <div>
-      <h2>
-        {user.firstName} {user.lastName}
-      </h2>
+      <img className="results-profile-image" src="/defaultProfileImage.jpg" />
+      <h2>{user.firstName}</h2>
       <div>
         <>
           <h4>{`I want to ${title}`}</h4>
@@ -16,7 +15,6 @@ function UserResults({ user, title }) {
           </ul>
         </>
       </div>
-      <p>{user.email}</p>
     </div>
   )
 }
