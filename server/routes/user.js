@@ -8,6 +8,7 @@ const {
   checkExists,
   getUserByAuth,
   updateUser,
+  getUserById,
 } = require('../db/users')
 const {
   addUserSkills,
@@ -100,6 +101,32 @@ router.get('/check', async (req, res) => {
     res.status(500).json({
       error: {
         title: 'Failed to run details check',
+      },
+    })
+  }
+})
+
+// GET /user/:id
+// MAKE SURE THEY're Logged in - checkJwt
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const user = await getUserById(id)
+    const skills = user ? await getSkillsByUserId(user.id) : []
+    res.status(200).json({
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      username: user.username,
+      email: user.email, //maybe we don't want email??
+      about: user.about,
+      skills,
+    }) // do we want to give all info? Or filter before send?
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      error: {
+        title: "Couldn't get user",
       },
     })
   }

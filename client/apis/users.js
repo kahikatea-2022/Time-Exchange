@@ -14,7 +14,6 @@ export function getUsers(token) {
     })
 }
 
-
 export function getUser(token) {
   return request
     .get(rootUrl + '/user')
@@ -92,6 +91,18 @@ export function getLearners(token) {
     .set('authorization', `Bearer ${token}`)
     .set({ Accept: 'application/json' })
     .then((res) => res.body.users)
+    .catch((err) => {
+      const errMessage = err.response?.body?.error?.title
+      throw new Error(errMessage || err.message)
+    })
+}
+
+export function getProfile(id) {
+  //use token later!!!
+  return request
+    .get(rootUrl + `/user/${id}`)
+    .set({ Accept: 'application/json' })
+    .then((res) => res.body)
     .catch((err) => {
       const errMessage = err.response?.body?.error?.title
       throw new Error(errMessage || err.message)
