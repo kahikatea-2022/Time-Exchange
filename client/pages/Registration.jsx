@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import BioForm from '../components/Registration/BioFrom'
+import BioForm from '../components/Registration/BioForm'
 import SkillForm from '../components/Registration/SkillForm'
 import { fetchCategories, saveUser } from './registrationHelper'
 
@@ -57,15 +57,19 @@ function Registration() {
     const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }
   return (
-    <div>
-      {/* error div goes here */}
-      <h1>{title}</h1>
-      <form onSubmit={handleSubmit}>
-        <BioForm setBio={setBio} bio={bio} />
-        <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
-        <SkillForm role='teach' changeFunct={setTeach} array={teach} categories={categories} required={true}/>
-        <button type='submit'>{user.id ? "Update" : "Register"}</button>
-      </form>
+    <div className='rego-page-container'>
+      <div className='registration-container'>
+        {/* error div goes here */}
+        <h1 className='rego-title'>{title}</h1>
+        <form onSubmit={handleSubmit}>
+          <BioForm setBio={setBio} bio={bio} />
+          <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
+          <SkillForm role='teach' changeFunct={setTeach} array={teach} categories={categories} required={true}/>
+          <div className='btn'>
+          <button id='register-btn' type='submit'>{user.id ? "Update" : "Register"}</button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
