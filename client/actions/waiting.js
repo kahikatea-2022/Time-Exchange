@@ -1,5 +1,5 @@
 export const SET_WAITING = 'SET_WAITING'
-export const UNSET_WAITING = 'SET_WAITING'
+export const UNSET_WAITING = 'UNSET_WAITING'
 
 export function isWaiting() {
   return {

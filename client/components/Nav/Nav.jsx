@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
- 
 function Nav() {
   const [open, setOpen] = useState(false)
   const user = useSelector((state) => state.user)
@@ -54,20 +53,25 @@ function Nav() {
                 
             </IfAuthenticated>
 
-            <IfNotAuthenticated>
-              <li className="nav-item"><a href='/' onClick={handleLogin}>Login</a></li>
-              <li className="nav-item"><a href='/' onClick={handleRegister}>Register</a></li>
-            </IfNotAuthenticated>
-     
-          </ul>
-        
-        )}
+          <IfNotAuthenticated>
+            <li className="nav-item">
+              <a href="/" onClick={handleLogin}>
+                Login
+              </a>
+            </li>
+            <li className="nav-item">
+              <a href="/" onClick={handleRegister}>
+                Register
+              </a>
+            </li>
+          </IfNotAuthenticated>
+        </ul>
+      )}
     </nav>
   )
 }
 
 export default Nav
-
 
 // IF not logged in links:
 // Sign in
