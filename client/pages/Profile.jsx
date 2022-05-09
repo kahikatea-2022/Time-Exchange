@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { retrieveUsers } from './resultsHelper'
+import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
+import Error from '../components/Error/Error'
 
 function Profile() {
   const { id } = useParams()
@@ -15,6 +17,12 @@ function Profile() {
 
   const teach = user.skills.filter((x) => x.role === 'teach')
   const learn = user.skills.filter((x) => x.role === 'learn')
+
+  if (waiting) {
+    return <WaitIndicator />
+  } else if (error) {
+    return <Error message={error} />
+  }
 
   return (
     <div className="page-container">
