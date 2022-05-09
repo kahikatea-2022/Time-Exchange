@@ -17,6 +17,11 @@
   margin: 2px;
 }
 
+#link {
+  text-decoration: none;
+  list-style: none;
+  color: #390345;
+}
 .results {
   display: flex;
   flex-wrap: wrap;
@@ -29,11 +34,10 @@
 }
 
 .search-results-container {
-  
   height: 100%;
   width: 28vw;
   flex: 0 0 auto;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   // box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
   border-radius: 25px;
   // background-color: #EBEFE7;
@@ -44,4 +48,50 @@
 
 .results-title {
   margin: 1px;
+}
+
+.results-profile-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 15px;
+  margin-left: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.user-name {
+  margin: 2px;
+  font-size: 35px;
+  text-align: center;
+  padding: 5px;
+  color: #390345;
+  -webkit-text-stroke: 0.1px white;
+}
+.image-username-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+#user-name {
+  margin: 1px;
+  font-size: 25px;
+  padding: 10px;
+}
+
+.pfp-info {
+  display: flex;
+}
+
+#i-want-to {
+  margin: 20px;
+}
+.skill-list {
+  font-size: 22px;
+  font-family: 'Cantarell', sans-serif;
+  font-style: italic;
+  display: list-item;
+  list-style-type: disc;
+  list-style-position: inside;
+  margin: 15px;
 }
