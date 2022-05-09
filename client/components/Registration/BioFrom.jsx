@@ -5,10 +5,9 @@
 
 import React from 'react'
 
-function BioForm({setBio, bio}) {
-
+function BioForm({ setBio, bio }) {
   function handleChange(event) {
-    setBio({...bio, [event.target.name] : event.target.value})
+    setBio({ ...bio, [event.target.name]: event.target.value })
   }
 
   return (
@@ -62,7 +61,7 @@ function BioForm({setBio, bio}) {
         disabled={true}
       />
 
-    <label htmlFor="about" className="label">
+      <label htmlFor="about" className="label">
         About
       </label>
       <input

@@ -14,7 +14,6 @@ export function getUsers(token) {
     })
 }
 
-
 export function getUser(token) {
   return request
     .get(rootUrl + '/user')
