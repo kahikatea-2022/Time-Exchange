@@ -1,0 +1,47 @@
+@use '../theme';
+@use '../mediaQuery';
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chewy&family=Courgette&display=swap');
+
+
+.type-heading-container {
+  text-align: center;
+  color: #390345;
+  font-family: 'Shrikhand', cursive;
+  font-size: 40px;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 0.25px white;
+  padding: 5px;
+  margin: 2px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-around;
+  height:100vh;
+  margin: 0px 30px 30px 30px;
+  padding: 25px;
+}
+
+.search-results-container {
+  
+  height: 100%;
+  width: 28vw;
+  flex: 0 0 auto;
+  border: 1px solid #ccc;
+  // box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+  border-radius: 25px;
+  // background-color: #EBEFE7;
+  // -webkit-box-shadow: 0px 0px 7px 0px white;
+  box-shadow: 0px 0px 7px 0px white;
+  background-color: rgb(235, 239, 231, 0.5);
+}
+
+.results-title {
+  margin: 1px;
+}

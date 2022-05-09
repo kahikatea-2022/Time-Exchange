@@ -24,8 +24,13 @@ function Results() {
     return <p>wah wah doesnt work</p>
   } else {
     return (
-      <div>
-        <h1>{`Here are your ${type}`}</h1>
+      <div className='results-container'>
+
+        <div className='type-heading-container'>
+          <h1 className='results-title'>{`Here are your ${type}`}</h1>
+        </div>
+      
+        <div className='results'>
         {users.map((result) => {
           return (
             <SearchResults
@@ -36,6 +41,10 @@ function Results() {
             />
           )
         })}
+        </div>
+      
+        
+
       </div>
     )
   }

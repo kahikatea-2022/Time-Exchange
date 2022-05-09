@@ -2,8 +2,9 @@ import React from 'react'
 
 function UserResults({ user, title }) {
   return (
-    <div>
-      <h2>
+    <div className='search-container'>
+    <div className='search-results-container'>
+      <h2 className='user-name'>
         {user.firstName} {user.lastName}
       </h2>
       <div>
@@ -17,6 +18,7 @@ function UserResults({ user, title }) {
         </>
       </div>
       <p>{user.email}</p>
+    </div>
     </div>
   )
 }
