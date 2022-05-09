@@ -15,8 +15,6 @@ function Profile() {
     retrieveUsers(id, setUser, setError)
   }, [])
 
-  console.log(error)
-
   if (waiting) {
     return <WaitIndicator />
   } else if (error) { // we want to show this if user not found
@@ -34,7 +32,7 @@ function Profile() {
         <div className="profile-column">
           <div className="profile-card">
             <div className="profile-welcome">My name is {user.firstName}</div>
-            <img src={user.picture} alt={user.firstName} />
+            <img src={user.picture || '/defaultProfileImage.jpg'} alt={user.firstName} />
             <div className="profile-about">
               Learn about me:<br></br>
               <br></br>
