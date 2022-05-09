@@ -1,12 +1,13 @@
 // May need to use category name rather than id in options
 import React from 'react'
 
-function SkillForm({role, changeFunct, array, categories, required = false}) {
-
-  function handleChange (event, index, key) {
-    changeFunct( array.map((val, idx) => {
-      return idx !== index ? val : {...val, [key]: event.target.value} 
-    }))
+function SkillForm({ role, changeFunct, array, categories, required = false }) {
+  function handleChange(event, index, key) {
+    changeFunct(
+      array.map((val, idx) => {
+        return idx !== index ? val : { ...val, [key]: event.target.value }
+      })
+    )
   }
 
   return (
@@ -26,7 +27,7 @@ function SkillForm({role, changeFunct, array, categories, required = false}) {
         </div>
         )
       })}
-  </div>
+    </div>
   )
 }
 

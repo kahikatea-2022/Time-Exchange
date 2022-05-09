@@ -12,12 +12,11 @@
   $spacer: 50px;
 
   &-container {
-    display: flex 
+    display: flex;
   }
 
   &-column {
     flex: 1 1 100%;
-
   }
 
   &-column + &-column {
@@ -30,7 +29,7 @@
     padding: 30px;
     font-family: 'Cantarell', sans-serif;
     font-weight: 100;
-    font-size: 24px; 
+    font-size: 24px;
   }
 
   &-card + &-card {
@@ -43,7 +42,7 @@
   }
 
   &-about {
-    padding-top: 20px;
+    padding: 20px 0;
     font-style: italic;
   }
 
@@ -55,11 +54,9 @@
   }
 }
 
-
 h2 {
   font-family: 'Shrikhand', cursive;
   font-size: 50px;
-
 }
 h4 {
   margin-top: 0;
@@ -67,4 +64,13 @@ h4 {
   font-size: 30px;
   font-family: 'Shrikhand', cursive;
   letter-spacing: 1px;
+}
+
+#profile-link {
+  font-style: italic;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #ebefe7;
+  background-color: #390345;
+  border-radius: 10px;
 }

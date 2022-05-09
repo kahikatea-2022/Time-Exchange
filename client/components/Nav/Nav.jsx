@@ -10,7 +10,6 @@ import { useSelector } from 'react-redux'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
- 
 function Nav() {
   const [open, setOpen] = useState(false)
   const user = useSelector((state) => state.user)
@@ -38,36 +37,54 @@ function Nav() {
   }
 
   return (
-    <nav className='nav-menu'>
-            <div className="hamburger-container" onClick={toggleMenu}>
-              <GiHamburgerMenu className='hamburger' onClick={toggleMenu} />
-            </div>
-            {open && (
-          <ul  className='main-nav'>
-            <IfAuthenticated>
-                
-                <li className="nav-item"><Link to='/results/learners'>Learn</Link></li>
-                <li className="nav-item"><Link to='/results/teachers'>Teach</Link></li>
-                
-                <li className="nav-item"><Link to='/myprofile'>My Profile</Link></li>
-                <li className="nav-item"><a href='/' onClick={handleLogoff}>Logout</a></li>
-                
-            </IfAuthenticated>
+    <nav className="nav-menu">
+      <div className="hamburger-container" onClick={toggleMenu}>
+        <GiHamburgerMenu className="hamburger" onClick={toggleMenu} />
+      </div>
+      {open && (
+        <ul className="main-nav">
+          <IfAuthenticated>
+            <li className="nav-item">
+              <Link id="nav-link" to="/results/learners">
+                Learn
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link id="nav-link" to="/results/teachers">
+                Teach
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link id="nav-link" to="/myprofile">
+                My Profile
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a id="nav-link" href="/" onClick={handleLogoff}>
+                Logout
+              </a>
+            </li>
+          </IfAuthenticated>
 
-            <IfNotAuthenticated>
-              <li className="nav-item"><a href='/' onClick={handleLogin}>Login</a></li>
-              <li className="nav-item"><a href='/' onClick={handleRegister}>Register</a></li>
-            </IfNotAuthenticated>
-     
-          </ul>
-        
-        )}
+          <IfNotAuthenticated>
+            <li className="nav-item">
+              <a id="nav-link" href="/" onClick={handleLogin}>
+                Login
+              </a>
+            </li>
+            <li className="nav-item">
+              <a id="nav-link" href="/" onClick={handleRegister}>
+                Register
+              </a>
+            </li>
+          </IfNotAuthenticated>
+        </ul>
+      )}
     </nav>
   )
 }
 
 export default Nav
-
 
 // IF not logged in links:
 // Sign in
