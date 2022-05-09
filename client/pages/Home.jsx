@@ -21,37 +21,40 @@ function Home() {
             <p id="about-app">
               <i>
                 {' '}
-                Lorem ipsum dolor sit amet consectetur adipisicing e lit. Modi
-                eum corrupti ipsum. Voluptatibus aliquid l aboriosam consequatur
-                quisquam non optio placeat acc usantium et veniam natus culpa
-                modi quis recusandae
+                Welcome to to the Karma family. <br></br>
+                <br></br>The only reciprocal community of learning and teaching.
+                Be a teacher one moment and a student the next. <br></br>
+                <br></br>
+                Everyone has skills and knowledge to share, the only currency
+                required is a willingness to teach others.
               </i>
             </p>
           </div>
         </div>
         <div className="reviews-container">
           <div>
-            <h4 className="review-title">Thanks to David</h4>
+            <h4 className="review-title">Dr Bigbrain</h4>
 
             <p className="review-text">
-              Great teacher, very patient and really knows how to get learnings
-              across. I am looking forward to continue to learn the Piano
+              I learnt so much from Bigbrain. I went from being a bench-warming
+              Bronze tier Valorant player to an Immortal in two weeks. Now I can
+              360 noscope in my sleep!
             </p>
           </div>
           <div>
-            <h4 className="review-title">I learnt Japanese</h4>
+            <h4 className="review-title">Holdme-Sempai</h4>
             <p className="review-text">
-              Had a easy experience connecting with Kim through Karma, Sent an
-              email and organized a time for teachings. Thanks to Karma I now
-              know the basics of a language I otherwise would not have learnt.
+              O-Sempai had the patience of a saint whilst teaching me Japanese.
+              Now I can order sushi like a pro and spit freestyle Naruto rhymes
+              like a B-boy raised in the Shinjuku Ghetto.
             </p>
           </div>
           <div>
-            <h4 className="review-title">I love Teaching - Thanks Karma</h4>
+            <h4 className="review-title">Toothpick crafting with Shane </h4>
             <p className="review-text">
-              I have been using Karma for just over 3 months now, And can not
-              believe the connections I have made with people who have the same
-              passion for the things that I do.
+              I was able to connect with Shane who has taught me the forgotten
+              art of toothpick crafting. Karma has created safe place for lesser
+              known esoteric arts.
             </p>
           </div>
         </div>
