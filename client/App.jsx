@@ -6,6 +6,7 @@ import Registration from './pages/Registration'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
+import Profile from './pages/Profile'
 import MyProfile from './pages/MyProfile'
 import Results from './pages/Results'
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/myprofile/edit" element={<Registration />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/results/:type" element={<Results />} />
+        <Route path="/user/:id" element={<Teacher />} />
       </Routes>
     </div>
   )
