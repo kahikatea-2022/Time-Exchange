@@ -45,12 +45,12 @@ function Nav() {
         <ul className="main-nav">
           <IfAuthenticated>
             <li className="nav-item">
-              <Link id="nav-link" to="/results/learners">
+              <Link id="nav-link" to="/results/teachers">
                 Learn
               </Link>
             </li>
             <li className="nav-item">
-              <Link id="nav-link" to="/results/teachers">
+              <Link id="nav-link" to="/results/learners">
                 Teach
               </Link>
             </li>

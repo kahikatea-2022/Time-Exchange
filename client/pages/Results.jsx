@@ -21,7 +21,24 @@ function Results() {
   useEffect(() => {
     user.token && retrieveUsers(user.token, setUsers, setError)
   }, [user]) // dependency is set to user because initially there is no token stored for the user in redux when there is a refresh, and the API call returns an error when useEffect first runs, so it is needed to be re-run when the user is updated in redux with the token
-  const title = type == 'teachers' ? 'teach' : 'learn'
+  const role = type == 'teachers' ? 'teach' : 'learn'
+
+  const [search, setSearch] = useState('')
+
+  const filteredUsers = search
+    ? users.filter((user) =>
+        user.skills.some(
+          (skill) =>
+            skill.role === role &&
+            (skill.skill.toLowerCase().includes(search.toLowerCase()) ||
+              skill.category.toLowerCase().includes(search.toLowerCase()))
+        )
+      )
+    : users
+
+  const onSearchChange = (event) => {
+    setSearch(event.currentTarget.value)
+  }
 
   if (waiting) {
     return <WaitIndicator />
@@ -30,29 +47,37 @@ function Results() {
   } else {
     return (
       <div className='results-container'>
-
         <div className='type-heading-container'>
-          <h1 className='results-title'>{`Here are your ${type}`}</h1>
-        </div>
-      
-        <div className='results'>
-        {users.map((result) => {
-          return (
-            <SearchResults
-              user={result}
-              resultsType={resultsType}
-              title={title}
-              key={result.id}
-            />
-          )
-        })}
-        </div>
-      
         
-
+            <h1 className='results-title'>{`Here are your ${type}`}</h1>
+        </div>
+        <div className='results-title-container'>
+          
+                {<input className='search-bar'
+                  type="search"
+                  placeholder="Search by Skill or Category.."
+                  value={search}
+                  onChange={onSearchChange}
+                />}
+                
+        </div>
+          
+        <div className='results'>
+                {filteredUsers.map((result) => {
+                return (
+                  <SearchResults
+                    user={result}
+                    resultsType={resultsType}
+                    title={role}
+                    key={result.id}
+                  />
+                )
+              })}
+        </div>
       </div>
     )
   }
 }
 
 export default Results
+ 
