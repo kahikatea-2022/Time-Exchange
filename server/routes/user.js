@@ -126,7 +126,7 @@ router.get('/:id', async (req, res) => {
     console.log(error)
     res.status(500).json({
       error: {
-        title: "Couldn't get user",
+        title: "That user couldn't be found.",
       },
     })
   }
