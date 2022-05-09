@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { retrieveUsers } from './resultsHelper'
+import { retrieveUsers } from './profileHelper'
 import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 import Error from '../components/Error/Error'
 
@@ -15,17 +15,20 @@ function Profile() {
     retrieveUsers(id, setUser, setError)
   }, [])
 
-  const teach = user.skills.filter((x) => x.role === 'teach')
-  const learn = user.skills.filter((x) => x.role === 'learn')
+  console.log(error)
 
   if (waiting) {
     return <WaitIndicator />
-  } else if (error) {
+  } else if (error) { // we want to show this if user not found
     return <Error message={error} />
-  }
-
-  return (
-    <div className="page-container">
+  } else if (!user.username) {
+    return <div>No users found</div>
+  } else {
+    
+    const teach = user.skills.filter((x) => x.role === 'teach')
+    const learn = user.skills.filter((x) => x.role === 'learn')
+    return (
+      <div className="page-container">
       <h2>Teachers Profile</h2>
       <div className="profile-container">
         <div className="profile-column">
@@ -64,7 +67,8 @@ function Profile() {
         </div>
       </div>
     </div>
-  )
+    )
+  }
 }
 
 export default Profile
