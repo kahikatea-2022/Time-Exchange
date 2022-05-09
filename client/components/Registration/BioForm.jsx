@@ -11,9 +11,10 @@ function BioForm({ setBio, bio }) {
   }
 
   return (
-    <div>
-      <h2>My Profile</h2>
-
+    <div className='bioform-container'>
+      <div className='myprofile-container'>
+      <h2 id='profile-title'>My Profile</h2>
+    <div className='name-container'>
       <label htmlFor="firstName" className="label">
         First Name
       </label>
@@ -36,7 +37,8 @@ function BioForm({ setBio, bio }) {
         onChange={handleChange}
         value={bio?.lastName || ''}
       />
-
+      </div>
+      <div className='name-container'>
       <label htmlFor="username" className="label">
         Username
       </label>
@@ -60,11 +62,12 @@ function BioForm({ setBio, bio }) {
         onChange={handleChange}
         disabled={true}
       />
-
-      <label htmlFor="about" className="label">
+  </div>
+  <div className='about-input-form'>
+    <label  htmlFor="about" className="label">
         About
       </label>
-      <input
+      <textarea
         className="form-box"
         id="about"
         name="about"
@@ -72,7 +75,9 @@ function BioForm({ setBio, bio }) {
         value={bio?.about || ''}
         required
       />
+      </div>
     </div>
+  </div>
   )
 }
 

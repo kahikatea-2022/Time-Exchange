@@ -96,3 +96,15 @@ export function getLearners(token) {
       throw new Error(errMessage || err.message)
     })
 }
+
+export function getProfile(id) {
+  //use token later!!!
+  return request
+    .get(rootUrl + `/user/${id}`)
+    .set({ Accept: 'application/json' })
+    .then((res) => res.body)
+    .catch((err) => {
+      const errMessage = err.response?.body?.error?.title
+      throw new Error(errMessage || err.message)
+    })
+}

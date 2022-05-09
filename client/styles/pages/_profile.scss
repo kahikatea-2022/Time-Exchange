@@ -42,7 +42,7 @@
   }
 
   &-about {
-    padding-top: 20px;
+    padding: 20px 0;
     font-style: italic;
   }
 
@@ -64,4 +64,13 @@ h4 {
   font-size: 30px;
   font-family: 'Shrikhand', cursive;
   letter-spacing: 1px;
+}
+
+#profile-link {
+  font-style: italic;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #ebefe7;
+  background-color: #390345;
+  border-radius: 10px;
 }

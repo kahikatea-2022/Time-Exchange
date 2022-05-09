@@ -45,17 +45,22 @@ function Nav() {
         <ul className="main-nav">
           <IfAuthenticated>
             <li className="nav-item">
-              <Link to="/results/learners">Learn</Link>
+              <Link id="nav-link" to="/results/learners">
+                Learn
+              </Link>
             </li>
             <li className="nav-item">
-              <Link to="/results/teachers">Teach</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link to="/myprofile">My Profile</Link>
+              <Link id="nav-link" to="/results/teachers">
+                Teach
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="/" onClick={handleLogoff}>
+              <Link id="nav-link" to="/myprofile">
+                My Profile
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a id="nav-link" href="/" onClick={handleLogoff}>
                 Logout
               </a>
             </li>
@@ -63,12 +68,12 @@ function Nav() {
 
           <IfNotAuthenticated>
             <li className="nav-item">
-              <a href="/" onClick={handleLogin}>
+              <a id="nav-link" href="/" onClick={handleLogin}>
                 Login
               </a>
             </li>
             <li className="nav-item">
-              <a href="/" onClick={handleRegister}>
+              <a id="nav-link" href="/" onClick={handleRegister}>
                 Register
               </a>
             </li>
