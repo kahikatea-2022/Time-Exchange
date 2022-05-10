@@ -21,7 +21,7 @@ function Home() {
             <p id="about-app">
               <i>
                 {' '}
-                Welcome to to the Karma family. <br></br>
+                Welcome to the Karma family! <br></br>
                 <br></br>The only reciprocal community of learning and teaching.
                 Be a teacher one moment and a student the next. <br></br>
                 <br></br>
