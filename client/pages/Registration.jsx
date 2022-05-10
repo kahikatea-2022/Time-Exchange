@@ -60,15 +60,17 @@ function Registration() {
     event.preventDefault()
     const skills = [
       ...learn
-        .filter((skill) => skill.skill !== '')
+        .filter((skill) => skill.skill.trim() !== '')
         .map((skill) => ({
           ...skill,
+          role: "learn",
           category: categoryNameToId(skill.category),
         })),
       ...teach
-        .filter((skill) => skill.skill !== '')
+        .filter((skill) => skill.skill.trim() !== '')
         .map((skill) => ({
           ...skill,
+          role: "teach",
           category: categoryNameToId(skill.category),
         })),
     ]
