@@ -87,9 +87,9 @@ exports.seed = async function (knex) {
     {
       id: 8,
       auth0_id: 'auth0|62734d140b600f00693e3f56',
-      first_name: 'Beverly',
+      first_name: 'Jemima',
       last_name: 'Cumberbatch',
-      username: 'AuntBeverly',
+      username: 'AuntJemima',
       email: 'dontcallmeabatch@batchery.com',
       about:
         'My passions are fine dining and high end handbags. I am an expert crypto-trader and can teach you how to sell NFTs back to yourself for tax minimisation strats. I do not provide any financial advice. Looking for a tennis partner/teacher and to improve my Spanish skills.',
