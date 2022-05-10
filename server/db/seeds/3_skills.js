@@ -178,7 +178,7 @@ exports.seed = async function (knex) {
     },
     { id: 43, user_id: 2, category_id: 1, skill: 'Javascript', role: 'teach' },
     { id: 44, user_id: 3, category_id: 5, skill: 'Yoga', role: 'teach' },
-    { id: 45, user_id: 3, category_id: 1, skill: 'Narcissim ', role: 'learn' },
+    { id: 45, user_id: 3, category_id: 1, skill: 'Narcissism ', role: 'learn' },
     {
       id: 46,
       user_id: 3,
