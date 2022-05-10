@@ -63,18 +63,18 @@ function Registration() {
         .filter((skill) => skill.skill.trim() !== '')
         .map((skill) => ({
           ...skill,
-          role: "learn",
+          role: 'learn',
           category: categoryNameToId(skill.category),
         })),
       ...teach
         .filter((skill) => skill.skill.trim() !== '')
         .map((skill) => ({
           ...skill,
-          role: "teach",
+          role: 'teach',
           category: categoryNameToId(skill.category),
         })),
     ]
-    const userDetails = { ...bio, skills }
+    const userDetails = { ...bio, region: bio.region || 'Northland', skills }
     const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }
   return (

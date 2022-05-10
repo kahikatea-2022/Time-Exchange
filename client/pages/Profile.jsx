@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { retrieveUsers } from './profileHelper'
 import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 import Error from '../components/Error/Error'
+import Chat from '../components/Chat/Chat'
 import Rating from '../components/Rating'
 import { updateUserRating } from '../apis/users'
 
@@ -52,11 +53,6 @@ function Profile() {
                 <br></br>
                 {user.about}
               </div>
-              <div className="profile-card">
-                Connect with me directly:<br></br>
-                <br></br>
-                {user.email}
-              </div>
             </div>
           </div>
           <div className="profile-column">
@@ -76,6 +72,7 @@ function Profile() {
                 </div>
               ))}
             </div>
+            <Chat />
           </div>
         </div>
       </div>
