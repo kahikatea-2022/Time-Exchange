@@ -9,7 +9,7 @@ function addUser(user, db = connection) {
     username: user.username,
     email: user.email,
     about: user.about,
-    location: user.location
+    location: user.location,
   })
 }
 
@@ -22,7 +22,7 @@ function updateUser(user, db = connection) {
     username: user.username,
     email: user.email,
     about: user.about,
-    location: user.location
+    location: user.location,
   })
 }
 
