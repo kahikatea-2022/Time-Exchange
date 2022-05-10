@@ -11,6 +11,7 @@ exports.seed = async function (knex) {
       email: 'tracey@doghome.com',
       about:
         'I love all things Vampire! I am pretty good at fencing and Brazilian Jiu Jitsu and keen to find someone to teach me how to sing; Tuvan Throat singing style in particular. Would also love to learn knitting to make coats for my blessing of cats.',
+      location: 3,
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ exports.seed = async function (knex) {
       username: 'Gdog',
       email: 'garrettwon@gmail.com',
       about: 'I love myself',
+      location: 6,
     },
     {
       id: 4,
@@ -40,6 +42,7 @@ exports.seed = async function (knex) {
       email: 'whodafiam@twitch.com',
       about:
         'My friends call me Ben, I stream on twitch most days. Can anyone teach me how to drive? Have failed my restricted license three times this month. Can teach you about gaming and streaming and also am pretty decent at airsoft. Am the biggest collector of My little Unicorns.',
+      location: 7,
     },
     {
       id: 5,
@@ -50,6 +53,7 @@ exports.seed = async function (knex) {
       email: 'dogooder@kittenmail.com',
       about:
         'I am a keen RPGer and love crafting suits of armour and weapons in my home forge. Have been interested in learning to grow mushrooms, and other interesting plants... My Papillon - Pappy constantly needs a groom as he always steals my Lasercap<sup>TM</sup>, desperately need someone to teach me how to groom Pappy!.',
+      location: 13,
     },
     {
       id: 6,
@@ -60,6 +64,7 @@ exports.seed = async function (knex) {
       email: 'korgbat79@hottiemail.com',
       about:
         'Would like to connect with any other Mandalorian refugees. Will teach Mandolore culinary arts in exchange for armor and weapons maintenance skills. I am also an experienced Blurrg racer. This is the way.',
+      location: 16,
     },
     {
       id: 7,
@@ -70,6 +75,7 @@ exports.seed = async function (knex) {
       email: 'smidgearmy@gomail.xyz',
       about:
         'My interests are drinking, making and then drinking more beer. I am a competitive Salsa dancer and I also make my own shoes and toe socks.',
+      location: 17,
     },
     {
       id: 8,
@@ -80,6 +86,7 @@ exports.seed = async function (knex) {
       email: 'dontcallmeabatch@batchery.com',
       about:
         'My passions are fine dining and high end handbags. I am an expert crypto-trader and can teach you how to sell NFTs back to yourself for tax minimisation strats. I do not provide any financial advice. Looking for a tennis partner/teacher and to improve my Spanish skills.',
+      location: 18,
     },
     {
       id: 9,
@@ -90,6 +97,7 @@ exports.seed = async function (knex) {
       email: 'calmlaker444@retter.com',
       about:
         'Hi my name is Brent. I am new to this site and happy to meet you all. I am a keen fisherman and tinker around a lot with engines and motorbikes in my spare time. I would like to learn more about philosopy and meditation. Have also been trying to learn Yoga for a while on my own, but these old bones are not very flexible.',
+      location: 12,
     },
   ])
 }
