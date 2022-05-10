@@ -33,6 +33,14 @@ Will be individual for each member, think back to our human skills session on we
 
 - Jasmine - Planned mindfulness in the afternoons, mandatory screen break during lunch, will eat lunch outside if possible, journalling each day
 
+- Matt - Take small breaks often throughout the day, Make sure to take a lunch break & drink water. Go for a walk or some sort of exercise
+
+- Maria - Taking breaks regularly, doing yoga, going out when I can, spending quality time with family
+
+- Garrett - Taking breaks often, Time away from screen, Making sure I get a good amount of sleep
+
+- Jesse - Taking a break after the closing circle to spend time with partner and eat dinner with her, Making sure I tak a walk each day and get outside
+
 ### How we are going to take care of each other
 Being aware of what stress looks like for the other team members (see miro), being vigilant to the signs.
 
