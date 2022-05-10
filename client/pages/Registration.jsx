@@ -63,14 +63,14 @@ function Registration() {
         .filter((skill) => skill.skill.trim() !== '')
         .map((skill) => ({
           ...skill,
-          role: "learn",
+          role: 'learn',
           category: categoryNameToId(skill.category),
         })),
       ...teach
         .filter((skill) => skill.skill.trim() !== '')
         .map((skill) => ({
           ...skill,
-          role: "teach",
+          role: 'teach',
           category: categoryNameToId(skill.category),
         })),
     ]

@@ -5,12 +5,13 @@ import React from 'react'
 import MessageBox from './MessageBox'
 import MessageStart from './MessageStart'
 
-function MessageContainer({history, user}) {
+function MessageContainer({ history, user }) {
   return (
-    <div className='message-container'>
-      {history.length == 0
-        ? <MessageStart />
-        : history.map(chat => {
+    <div className="message-container">
+      {history.length == 0 ? (
+        <MessageStart />
+      ) : (
+        history.map((chat) => {
           return (
             <MessageBox
               key={chat.uuid}
@@ -20,7 +21,7 @@ function MessageContainer({history, user}) {
             />
           )
         })
-      }
+      )}
     </div>
   )
 }

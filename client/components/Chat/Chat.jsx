@@ -9,12 +9,12 @@ import MessageContainer from './MessageContainer'
 import Input from './Input'
 
 function Chat() {
-  socket.connect();
+  socket.connect()
 
-  const { id : user_2 } = useParams()
-  const user = useSelector(state => state.user)
+  const { id: user_2 } = useParams()
+  const user = useSelector((state) => state.user)
 
-  const [conversationID, setConversationID ] = useState(null)
+  const [conversationID, setConversationID] = useState(null)
   const [history, setHistory] = useState(() => [])
 
   const updateHistory = (update) => {
@@ -23,7 +23,7 @@ function Chat() {
   }
 
   useEffect(() => {
-    user.id && socket.emit('join_conversation', ({user_1: user.id, user_2}))
+    user.id && socket.emit('join_conversation', { user_1: user.id, user_2 })
   }, [user])
 
   useEffect(() => {
@@ -43,14 +43,14 @@ function Chat() {
 
   if (!user.id) {
     return (
-      <div className='chatArea'>
+      <div className="chatArea">
         <p>Login to send messages</p>
       </div>
     )
   }
-  
+
   return (
-    <div className='chatArea'>
+    <div className="chatArea">
       <MessageContainer history={history} user={user} />
       <Input user={user} conversationID={conversationID} />
     </div>
