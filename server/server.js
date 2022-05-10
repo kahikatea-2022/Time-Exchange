@@ -19,14 +19,19 @@ const app = express()
 const server = http.createServer(app)
 const io = socketIo(server)
 
-server.use(express.json())
-server.use(express.static(path.join(__dirname, 'public')))
+app.use(express.json())
+app.use(express.static(path.join(__dirname, 'public')))
 
 // API endpoints
-server.use('/api/v1/users', usersRoutes)
-server.use('/api/v1/user', userRoutes)
-server.use('/api/v1/categories', categoryRoutes)
-server.use('/api/v1/regions', regionRoutes)
+app.use('/api/v1/users', usersRoutes)
+app.use('/api/v1/user', userRoutes)
+app.use('/api/v1/categories', categoryRoutes)
+app.use('/api/v1/regions', regionRoutes)
+
+// React APP endpoint
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+})
 
 //Socket events
 io.on('connection', (socket) => {
@@ -60,11 +65,6 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('disconnected')
   })
-})
-
-// React APP endpoint
-server.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
 })
 
 module.exports = server
