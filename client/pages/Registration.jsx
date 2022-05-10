@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import BioForm from '../components/Registration/BioForm'
 import SkillForm from '../components/Registration/SkillForm'
-import { fetchCategories, saveUser } from './registrationHelper'
+import { fetchCategories, fetchRegions, saveUser } from './registrationHelper'
 
 function initalSkillArray(n, role) {
   return Array.from({ length: n }, () => ({ role, skill: '', category: '' }))
@@ -22,6 +22,7 @@ function Registration() {
   const [teach, setTeach] = useState(initalSkillArray(5, 'teach'))
   // const [errors, setErrors] = useState(() => [])
   const [categories, setCategories] = useState([])
+  const [regions, setRegions] = useState([])
 
   function categoryNameToId(name) {
     return categories.find((category) => category.name == name)?.id || 1
@@ -29,6 +30,7 @@ function Registration() {
 
   useEffect(() => {
     fetchCategories(setCategories)
+    fetchRegions(setRegions)
   }, [])
 
   useEffect(() => {
@@ -38,6 +40,7 @@ function Registration() {
       username: user.username,
       email: user.email,
       about: user.about,
+      region: user.region,
     })
     if (user.skills.length > 0) {
       // NOT DRY - Refactor!!!!
@@ -78,7 +81,7 @@ function Registration() {
         {/* error div goes here */}
         <h1 className="rego-title">{title}</h1>
         <form onSubmit={handleSubmit}>
-          <BioForm setBio={setBio} bio={bio} />
+          <BioForm setBio={setBio} bio={bio} regions={regions} />
           <SkillForm
             role="learn"
             changeFunct={setLearn}

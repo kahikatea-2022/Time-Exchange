@@ -37,6 +37,7 @@ function Profile() {
                 src={user.picture || '/defaultProfileImage.jpg'}
                 alt={user.firstName}
               />
+              <div className="profile-region">Location: {user.region}</div>
               <div className="profile-about">
                 Learn about me:<br></br>
                 <br></br>

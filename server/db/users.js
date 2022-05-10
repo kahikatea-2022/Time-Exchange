@@ -9,6 +9,7 @@ function addUser(user, db = connection) {
     username: user.username,
     email: user.email,
     about: user.about,
+    region: user.region,
   })
 }
 
@@ -21,6 +22,7 @@ function updateUser(user, db = connection) {
     username: user.username,
     email: user.email,
     about: user.about,
+    region: user.region,
   })
 }
 
@@ -41,7 +43,8 @@ function getUserById(id, db = connection) {
       'last_name as lastName',
       'username',
       'email',
-      'about'
+      'about',
+      'region'
     )
     .where('id', id)
     .first()
@@ -57,7 +60,8 @@ function getUserByAuth(auth0_id, db = connection) {
       'last_name as lastName',
       'username',
       'email',
-      'about'
+      'about',
+      'region'
     )
     .where('auth0_id', auth0_id)
     .first()
@@ -72,7 +76,8 @@ function getUsers(db = connection) {
       'last_name as lastName',
       'username',
       'email',
-      'about'
+      'about',
+      'region'
     )
     .where('status', 'active')
 }

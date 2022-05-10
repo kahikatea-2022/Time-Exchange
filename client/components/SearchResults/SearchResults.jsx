@@ -16,6 +16,7 @@ function UserResults({ user, title }) {
                 src="/defaultProfileImage.jpg"
               />
               <h2 id="user-name">{user.firstName}</h2>
+              <h3 className="profile-region">Location: {user.region}</h3>
             </div>
             <div>
               <>
