@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Rating from '../Rating'
 
 function UserResults({ user, title }) {
   return (
@@ -16,6 +17,8 @@ function UserResults({ user, title }) {
                 src="/defaultProfileImage.jpg"
               />
               <h2 id="user-name">{user.firstName}</h2>
+              <Rating rating={user.rating} />
+              <h3 className="profile-region">Location: {user.region}</h3>
             </div>
             <div>
               <>

@@ -5,7 +5,7 @@
 
 import React from 'react'
 
-function BioForm({ setBio, bio }) {
+function BioForm({ setBio, bio, regions }) {
   function handleChange(event) {
     setBio({ ...bio, [event.target.name]: event.target.value })
   }
@@ -62,6 +62,21 @@ function BioForm({ setBio, bio }) {
             onChange={handleChange}
             disabled={true}
           />
+          <label id="region" htmlFor="region">
+            Location
+          </label>
+          <select
+            className="select-region"
+            name="region"
+            onChange={(e) => handleChange(e)}
+            value={bio?.region || ''}
+          >
+            {regions.map((region) => (
+              <option value={region.region} key={region.id}>
+                {region.region}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="about-input-form">
           <label htmlFor="about" className="label">
