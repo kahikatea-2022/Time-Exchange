@@ -26,6 +26,12 @@ function updateUser(user, db = connection) {
   })
 }
 
+function updateUserRating(userId, rating, db = connection) {
+  return db('users').where('id', userId).update({
+    rating,
+  })
+}
+
 // sets status to inactive (doesn't actually delete... maybe change?)
 function deleteUser(auth0_id, db = connection) {
   return db('users').where('auth0_id', auth0_id).update({
@@ -44,6 +50,7 @@ function getUserById(id, db = connection) {
       'username',
       'email',
       'about',
+      'rating',
       'region'
     )
     .where('id', id)
@@ -61,6 +68,7 @@ function getUserByAuth(auth0_id, db = connection) {
       'username',
       'email',
       'about',
+      'rating',
       'region'
     )
     .where('auth0_id', auth0_id)
@@ -77,6 +85,7 @@ function getUsers(db = connection) {
       'username',
       'email',
       'about',
+      'rating',
       'region'
     )
     .where('status', 'active')
@@ -99,4 +108,5 @@ module.exports = {
   getUserByAuth,
   getUsers,
   checkExists,
+  updateUserRating,
 }

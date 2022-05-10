@@ -5,12 +5,14 @@ import { retrieveUsers } from './profileHelper'
 import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 import Error from '../components/Error/Error'
 import Rating from '../components/Rating'
+import { updateUserRating } from '../apis/users'
 
 function Profile() {
   const { id } = useParams()
   const [user, setUser] = useState({})
   const [error, setError] = useState('')
   const waiting = useSelector((state) => state.waiting)
+  const token = useSelector((globalState) => globalState.user.token)
 
   useEffect(() => {
     retrieveUsers(id, setUser, setError)
@@ -28,6 +30,7 @@ function Profile() {
     const learn = user.skills.filter((x) => x.role === 'learn')
     const onRatingChange = (newRating) => {
       setUser({ ...user, rating: newRating })
+      updateUserRating(user.id, newRating, token)
     }
 
     return (
