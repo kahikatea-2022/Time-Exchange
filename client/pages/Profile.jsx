@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { retrieveUsers } from './profileHelper'
 import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 import Error from '../components/Error/Error'
+import Chat from '../components/Chat/Chat'
 
 function Profile() {
   const { id } = useParams()
@@ -43,11 +44,12 @@ function Profile() {
                 <br></br>
                 {user.about}
               </div>
-              <div className="profile-card">
+              {/* <div className="profile-card">
                 Connect with me directly:<br></br>
                 <br></br>
                 {user.email}
-              </div>
+              </div> */}
+              <Chat />
             </div>
           </div>
           <div className="profile-column">
