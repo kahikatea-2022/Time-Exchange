@@ -13,6 +13,7 @@
 
   &-container {
     display: flex;
+    margin-bottom: 10px;
   }
 
   &-column {
@@ -26,11 +27,12 @@
   &-card {
     background: rgba(white, 0.5);
     border-radius: 15px;
-    padding: 30px;
+    padding: 15px;
     font-family: 'Cantarell', sans-serif;
     font-weight: 100;
     font-size: 24px;
     color: #390345;
+    margin: 20px;
   }
 
   &-card + &-card {
@@ -79,10 +81,12 @@ h4 {
   font-size: 60px;
   color: #390345;
   -webkit-text-stroke: 0.1px white;
+  margin: 10px;
+  padding: 20px;
 }
 #user-pfp {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
 }
 #my-profile-title {
   font-size: 60px;
