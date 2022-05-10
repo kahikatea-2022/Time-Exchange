@@ -25,7 +25,6 @@ function Profile() {
   } else {
     const teach = user.skills.filter((x) => x.role === 'teach')
     const learn = user.skills.filter((x) => x.role === 'learn')
-    console.log(user)
     return (
       <div className="page-container">
         <h2 id="teachers-profile">Profile</h2>
