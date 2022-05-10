@@ -53,8 +53,8 @@ function Home() {
             <h4 className="review-title">Toothpick crafting with Shane </h4>
             <p className="review-text">
               I was able to connect with Shane who has taught me the forgotten
-              art of toothpick crafting. Karma has created safe place for lesser
-              known esoteric arts.
+              art of toothpick crafting. I have finally found a safe place to
+              learn lesser known esoteric arts.
             </p>
           </div>
         </div>

@@ -46,27 +46,38 @@ function Results() {
     return <Error message={error} />
   } else {
     return (
-      <div>
-        <h1>{`Here are your ${type}`}</h1>
-        <input
-          type="search"
-          placeholder="Search by skill or category..."
-          value={search}
-          onChange={onSearchChange}
-        />
-        {filteredUsers.map((result) => {
-          return (
-            <SearchResults
-              user={result}
-              resultsType={resultsType}
-              title={role}
-              key={result.id}
-            />
-          )
-        })}
+      <div className='results-container'>
+        <div className='type-heading-container'>
+        
+            <h1 className='results-title'>{`Here are your ${type}`}</h1>
+        </div>
+        <div className='results-title-container'>
+          
+                {<input className='search-bar'
+                  type="search"
+                  placeholder="Search by Skill or Category.."
+                  value={search}
+                  onChange={onSearchChange}
+                />}
+                
+        </div>
+          
+        <div className='results'>
+                {filteredUsers.map((result) => {
+                return (
+                  <SearchResults
+                    user={result}
+                    resultsType={resultsType}
+                    title={role}
+                    key={result.id}
+                  />
+                )
+              })}
+        </div>
       </div>
     )
   }
 }
 
 export default Results
+ 
