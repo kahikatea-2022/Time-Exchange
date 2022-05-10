@@ -6,7 +6,7 @@ exports.up = async (knex) => {
   })
 }
 
-// rollback locations table
+// rollback regions table
 exports.down = async (knex) => {
   return await knex.schema.dropTable('regions')
 }

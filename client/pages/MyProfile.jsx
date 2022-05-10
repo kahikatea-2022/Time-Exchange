@@ -10,12 +10,13 @@ function MyProfile() {
 
   return (
     <div className="page-container">
-      <h2 id='my-profile-title'>My Profile</h2>
+      <h2 id="my-profile-title">My Profile</h2>
       <div className="profile-container">
         <div className="profile-column">
           <div className="profile-card">
             <div className="profile-welcome">Welcome {user.firstName}!</div>
             <img src={user.picture} alt={user.firstName} />
+            <div className="profile-region">Location: {user.region}</div>
             <div className="profile-about">{user.about}</div>
             <div className="profile-link">
               <Link id="profile-link" to="/myprofile/edit">

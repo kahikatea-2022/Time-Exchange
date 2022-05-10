@@ -1,5 +1,6 @@
 import { fetchUser } from '../actions/user'
 import { getCategories } from '../apis/categories'
+import { getRegions } from '../apis/regions'
 import { addUser, updateUser } from '../apis/users'
 import store from '../store'
 
@@ -25,6 +26,18 @@ export async function saveUser(user, token, redirect, update) {
   } catch (error) {
     console.log(error)
     return 'Could not save the user. Please contact an administrator' //should be error state
+  }
+  // finally dispatch not waiting
+}
+
+export async function fetchRegions(setRegions) {
+  try {
+    // dispatch waiting
+    const regions = await getRegions()
+    setRegions(regions)
+  } catch (err) {
+    console.log('fetchRegions ERROR')
+    console.log(err)
   }
   // finally dispatch not waiting
 }
