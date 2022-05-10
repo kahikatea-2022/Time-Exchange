@@ -1,0 +1,67 @@
+@use '../theme';
+@use '../mediaQuery';
+
+.chatArea {
+  width: 700px;
+  margin: 1em;
+}
+
+.message-container {
+  border: 1px solid gray; // use var
+  border-radius: 1em;
+  height: 400px;
+  width: 100%; // change, responsive
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: hsla(67, 0%, 100%, 0.6);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  padding: 0.1em 1em;
+  margin: 0.5em;
+  width: 80%;
+}
+
+.message-left {
+  align-self: flex-end;
+  border: 1px solid hsla(212, 100%, 50%, 1);
+  border-radius: 1em;
+  background-color: hsla(212, 100%, 50%, 0.46);
+}
+
+.message-right {
+  align-self: flex-start;
+  border: 1px solid hsla(132, 100%, 50%, 1);
+  border-radius: 1em;
+  background-color: hsla(132, 100%, 50%, 0.46);
+}
+
+.message-username {
+  align-self: flex-end;
+  color: gray;
+  font-style: italic;
+}
+
+.messageForm {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 3em;
+
+  textarea {
+    height: 100%;
+    flex: auto;
+    border-radius: 0.2em;
+    padding: 0.5em;
+  }
+  button {
+    height: 100%;
+    max-width: 4em;
+    flex: auto;
+    // width: 4em;
+  }
+}
