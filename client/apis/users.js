@@ -54,6 +54,18 @@ export function updateUser(user, token) {
   )
 }
 
+export function updateUserRating(userId, rating, token) {
+  return request
+    .patch(rootUrl + '/user/' + userId + '/rating')
+    .set('authorization', `Bearer ${token}`)
+    .set({ Accept: 'application/json' })
+    .send({ rating })
+    .catch((err) => {
+      const errMessage = err.response?.body?.error?.title
+      throw new Error(errMessage || err.message)
+    })
+}
+
 // Not currently used
 // export function getUserRoles(id) {
 //   return request.get(`${rootUrl}/users/${id}`).then((res) => {

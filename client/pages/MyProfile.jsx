@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Rating from '../components/Rating'
 
 function MyProfile() {
   const user = useSelector((globalState) => globalState.user)
@@ -16,6 +17,7 @@ function MyProfile() {
           <div className="profile-card">
             <div className="profile-welcome">Welcome {user.firstName}!</div>
             <img src={user.picture} alt={user.firstName} />
+            <Rating rating={user.rating} />
             <div className="profile-region">Location: {user.region}</div>
             <div className="profile-about">{user.about}</div>
             <div className="profile-link">

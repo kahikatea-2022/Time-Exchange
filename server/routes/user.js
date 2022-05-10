@@ -9,6 +9,7 @@ const {
   getUserByAuth,
   updateUser,
   getUserById,
+  updateUserRating,
 } = require('../db/users')
 const {
   addUserSkills,
@@ -34,6 +35,7 @@ router.post('/', checkJwt, async (req, res) => {
       username: user.username,
       email: user.email,
       about: user.about,
+      rating: user.rating,
       region: user.region,
     })
     await addUserSkills(id, user.skills)
@@ -60,6 +62,7 @@ router.put('/', checkJwt, async (req, res) => {
       username: user.username,
       email: user.email,
       about: user.about,
+      rating: user.rating,
       region: user.region,
     })
     const { id } = await getUserByAuth(auth0Id)
@@ -122,6 +125,7 @@ router.get('/:id', async (req, res) => {
       username: user.username,
       email: user.email, //maybe we don't want email??
       about: user.about,
+      rating: user.rating,
       region: user.region,
       skills,
     }) // do we want to give all info? Or filter before send?
@@ -130,6 +134,22 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({
       error: {
         title: "That user couldn't be found.",
+      },
+    })
+  }
+})
+
+// PATCH /api/v1/user/:id/rating (protected)
+router.patch('/:id/rating', checkJwt, async (req, res) => {
+  try {
+    const { id } = req.params
+    await updateUserRating(id, req.body.rating)
+    res.sendStatus(200)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      error: {
+        title: "Couldn't update user rating",
       },
     })
   }
