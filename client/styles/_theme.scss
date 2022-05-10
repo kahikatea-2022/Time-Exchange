@@ -1,0 +1,35 @@
+// Font imports here
+// e.g. @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+// Fonts
+// e.g $heading: 'Roboto Slab', serif;
+// e.g $paragraph: 'Quicksand', sans-serif;
+
+// Theme colours
+$theme-orange: hsla(38, 96%, 53%, 1);
+$theme-light-blue: #cae5e3;
+$theme-aqua: #cae5e3;
+$theme-yellow: #ffe598;
+$theme-maroon: #62071c;
+$theme-grey: #e6e6e6;
+$theme-violet: #f3f2ff;
+$theme-navy: #083d77;
+
+// Set colours
+$primary: $theme-yellow;
+$secondary: $theme-maroon;
+
+$header-background: $theme-light-blue;
+$header-text: $theme-orange;
+$primary-background: $theme-yellow;
+
+// Border
+// e.g. $border: $light-green;
+
+// shadow
+$box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.35);
+
+//Sizing
+$base-size: 1rem;
+$border-size: 0.1rem;
+$border-radius: 0.4rem;

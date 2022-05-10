@@ -1,4 +1,5 @@
-import { getUsers } from '../apis/users'
+import { getUser, getUsers } from '../apis/users'
+import { isNotWaiting, isWaiting } from './waiting'
 
 export const SET_USER = 'SET_USER'
 export const SET_USERS = 'SET_USERS'
@@ -37,5 +38,24 @@ export function fetchUsers() {
       dispatch(setUsers(users))
       return null
     })
+  }
+}
+
+export function fetchUser(token) {
+  return (dispatch) => {
+    dispatch(isWaiting())
+    return getUser(token)
+      .then((user) => {
+        dispatch(setUser(user))
+        // dispatch(isNotWaiting())
+        return null
+      })
+      .catch((error) => {
+        console.log(error)
+        // set error state...
+      })
+      .finally(() => {
+        dispatch(isNotWaiting())
+      })
   }
 }

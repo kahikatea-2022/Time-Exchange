@@ -1,0 +1,23 @@
+@use '../theme';
+@use '../mediaQuery';
+
+.error {
+  border: 1px solid rgba(245, 39, 39, 0.68); //add to theme colours
+  background-color: rgba(245, 39, 39, 0.4);
+  color: black;
+  padding: 1em 2em;
+  line-height: 1.5;
+  margin: 2em;
+  border-radius: 1em;
+  width: max-content;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.errorHolder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

@@ -1,0 +1,126 @@
+@use '../theme';
+@use '../mediaQuery';
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chewy&family=Courgette&display=swap');
+
+// styles for the register page here
+.rego-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registration-container {
+  border: 2px solid black;
+  display: flexbox;
+  justify-content: center;
+  // border: 1px solid orange;
+  border-radius: 25px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  // background-color: #EBEFE7;
+  // -webkit-box-shadow: 0px 0px 7px 0px white;
+  box-shadow: 0px 0px 7px 0px white;
+  background-color: rgb(235, 239, 231, 0.5);
+  width: 800px;
+  margin-top: 5px;
+}
+
+.rego-title {
+  font-size: 70px;
+  font-family: 'Shrikhand', cursive;
+  color: #390345;
+  user-select: none;
+  letter-spacing: 5px;
+  text-align: center;
+  -webkit-text-stroke: 0.5px white;
+  margin: 5px;
+}
+
+.label {
+  font-size: 25px;
+  width: 110px;
+  margin: 10px;
+  font-family: 'Chewy', cursive;
+  color: #390345;
+}
+.form-box {
+  border-radius: 5px;
+  margin: 10px 20px 10px 0;
+  text-align: left;
+}
+.name-container {
+  display: flex;
+  justify-content: space-around;
+}
+#profile-title {
+  color: #390345;
+  font-size: 40px;
+  text-align: center;
+}
+.skill-category-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#skill {
+  font-size: 30px;
+  margin: 10px;
+  font-family: 'Chewy', cursive;
+  color: #390345;
+}
+#category {
+  font-size: 30px;
+  margin: 10px;
+  color: #390345;
+  font-family: 'Chewy', cursive;
+}
+#skill-input {
+  border-radius: 5px;
+}
+
+#about {
+  width: 74%;
+  height: 45px;
+}
+
+.about-input-form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.select-category {
+  background-color: #390345;
+  border-radius: 5px;
+  color: #ebefe7;
+  height: 30px;
+  font-family: 'Chewy', cursive;
+  font-size: 20px;
+  padding: 1px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+#register-btn {
+  width: 200px;
+  height: 50px;
+  background-color: #390345;
+  color: #ebefe7;
+  font-family: 'Chewy', cursive;
+  font-size: 30px;
+  border-radius: 5px;
+}
+
+input[type='text'] {
+  color: #390345;
+  font-family: Cantarell, sans-serif;
+}
+
+.form-box {
+  color: #390345;
+  font-family: Cantarell, sans-serif;
+}

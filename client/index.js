@@ -7,7 +7,7 @@ import store from './store'
 // eslint-disable-next-line import/no-unresolved
 import config from './auth_config.json'
 
-import App from './components/App'
+import App from './App'
 import { Auth0Provider } from '@auth0/auth0-react'
 
 document.addEventListener('DOMContentLoaded', () => {

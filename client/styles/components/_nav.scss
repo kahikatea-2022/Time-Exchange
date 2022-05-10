@@ -1,0 +1,55 @@
+@use '../theme';
+@use '../mediaQuery';
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+.hamburger-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.hamburger {
+  font-size: 50px;
+  z-index: 2;
+  color: #390345;
+  margin-bottom: 50px;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+.nav-menu {
+  margin: 0;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  position: relative;
+  height: 50px;
+}
+
+ul {
+  list-style: none;
+}
+#nav-link {
+  text-decoration: none;
+  color: #ebefe7;
+  background-color: #390345;
+  border-radius: 10px;
+  padding: 2.5px;
+}
+.main-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 70px;
+  user-select: none;
+}
+.nav-item {
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Chewy', cursive;
+  letter-spacing: 4px;
+  font-weight: 100;
+  margin: 20px;
+  line-height: 0.5;
+}

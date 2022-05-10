@@ -1,0 +1,91 @@
+@use '../theme';
+@use '../mediaQuery';
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Chewy&family=Courgette&display=swap');
+
+.page-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+.profile {
+  $spacer: 50px;
+
+  &-container {
+    display: flex;
+  }
+
+  &-column {
+    flex: 1 1 100%;
+  }
+
+  &-column + &-column {
+    margin-left: $spacer;
+  }
+
+  &-card {
+    background: rgba(white, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    color: #390345;
+  }
+
+  &-card + &-card {
+    margin-top: $spacer;
+  }
+
+  &-welcome {
+    padding-bottom: 20px;
+    font-style: italic;
+  }
+
+  &-about {
+    padding: 20px 0;
+    font-style: italic;
+  }
+
+  &-skill {
+    display: list-item;
+    list-style-type: disc;
+    list-style-position: inside;
+    font-style: italic;
+  }
+}
+
+h2 {
+  font-family: 'Shrikhand', cursive;
+  font-size: 50px;
+}
+h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 30px;
+  font-family: 'Shrikhand', cursive;
+  letter-spacing: 1px;
+}
+
+#profile-link {
+  font-style: italic;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #ebefe7;
+  background-color: #390345;
+  border-radius: 10px;
+}
+#teachers-profile {
+  font-size: 60px;
+  color: #390345;
+  -webkit-text-stroke: 0.1px white;
+}
+#user-pfp {
+  width: 300px;
+  height: 300px;
+}
+#my-profile-title {
+  font-size: 60px;
+  color: #390345;
+  -webkit-text-stroke: 0.1px white;
+}
