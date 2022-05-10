@@ -28,7 +28,6 @@ function Chat() {
 
   useEffect(() => {
     socket.on('conversation', (setup) => {
-      console.log('Joining conversation: ', setup.conversationID)
       setConversationID(setup.conversationID)
       setHistory([...setup.history])
     })
