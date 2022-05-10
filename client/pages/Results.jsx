@@ -19,7 +19,7 @@ function Results() {
   }, [type])
 
   useEffect(() => {
-    user.token && retrieveUsers(user.token, setUsers, setError)
+    user.token && retrieveUsers(user.token, user.username, setUsers, setError)
   }, [user]) // dependency is set to user because initially there is no token stored for the user in redux when there is a refresh, and the API call returns an error when useEffect first runs, so it is needed to be re-run when the user is updated in redux with the token
   const role = type == 'teachers' ? 'teach' : 'learn'
 
