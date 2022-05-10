@@ -10,6 +10,7 @@ exports.seed = async function (knex) {
       username: 'testUser01',
       email: 'testemail@test.com',
       about: 'This is my test user account. Cool!',
+      location: 2
     },
   ])
 }

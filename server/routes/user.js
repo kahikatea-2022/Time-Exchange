@@ -34,6 +34,7 @@ router.post('/', checkJwt, async (req, res) => {
       username: user.username,
       email: user.email,
       about: user.about,
+      location: user.location,
     })
     await addUserSkills(id, user.skills)
     res.status(201).json({ id })
@@ -59,6 +60,7 @@ router.put('/', checkJwt, async (req, res) => {
       username: user.username,
       email: user.email,
       about: user.about,
+      location: user.location,
     })
     const { id } = await getUserByAuth(auth0Id)
     await updateUserSkills(id, user.skills)
