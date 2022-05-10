@@ -73,16 +73,29 @@ function Registration() {
     const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }
   return (
-    <div className='rego-page-container'>
-      <div className='registration-container'>
+    <div className="rego-page-container">
+      <div className="registration-container">
         {/* error div goes here */}
-        <h1 className='rego-title'>{title}</h1>
+        <h1 className="rego-title">{title}</h1>
         <form onSubmit={handleSubmit}>
           <BioForm setBio={setBio} bio={bio} />
-          <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
-          <SkillForm role='teach' changeFunct={setTeach} array={teach} categories={categories} required={true}/>
-          <div className='btn'>
-          <button id='register-btn' type='submit'>{user.id ? "Update" : "Register"}</button>
+          <SkillForm
+            role="learn"
+            changeFunct={setLearn}
+            array={learn}
+            categories={categories}
+          />
+          <SkillForm
+            role="teach"
+            changeFunct={setTeach}
+            array={teach}
+            categories={categories}
+            required={true}
+          />
+          <div className="btn">
+            <button id="register-btn" type="submit">
+              {user.id ? 'Update' : 'Register'}
+            </button>
           </div>
         </form>
       </div>

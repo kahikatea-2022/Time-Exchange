@@ -10,7 +10,7 @@ function MyProfile() {
 
   return (
     <div className="page-container">
-      <h2 id='my-profile-title'>My Profile</h2>
+      <h2 id="my-profile-title">My Profile</h2>
       <div className="profile-container">
         <div className="profile-column">
           <div className="profile-card">
