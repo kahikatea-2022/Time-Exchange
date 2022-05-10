@@ -27,12 +27,12 @@ function Profile() {
     const learn = user.skills.filter((x) => x.role === 'learn')
     return (
       <div className="page-container">
-      <h2>Teachers Profile</h2>
+      <h2 id='teachers-profile'>Profile</h2>
       <div className="profile-container">
         <div className="profile-column">
           <div className="profile-card">
             <div className="profile-welcome">My name is {user.firstName}</div>
-            <img src={user.picture || '/defaultProfileImage.jpg'} alt={user.firstName} />
+            <img id='user-pfp' src={user.picture || '/defaultProfileImage.jpg'} alt={user.firstName} />
             <div className="profile-about">
               Learn about me:<br></br>
               <br></br>
@@ -47,7 +47,7 @@ function Profile() {
         </div>
         <div className="profile-column">
           <div className="profile-card">
-            <h4>Things I can teach you about:</h4>
+            <h4>Things I can TEACH you:</h4>
             {teach.map((x) => (
               <div className="profile-skill" key={x.id}>
                 {x.skill}
