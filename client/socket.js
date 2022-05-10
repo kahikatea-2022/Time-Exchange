@@ -1,7 +1,9 @@
 import { io } from 'socket.io-client'
 
+const PORT = 3000
+
 // get FROM ENV !!!!!
-const ENDPOINT = `http://localhost:${process.env.PORT || 3000}`
+const ENDPOINT = `http://localhost:${PORT}`
 
 const socket = io(ENDPOINT, { autoConnect: false })
 
