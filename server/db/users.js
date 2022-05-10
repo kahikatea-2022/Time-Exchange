@@ -74,6 +74,9 @@ function getUsers(db = connection) {
       'email',
       'about'
     )
+    // Probably want to think about the security implications of exposing user
+    // emails to all authed users. I get that this is a feature, but what might
+    // be some alternatives?
     .where('status', 'active')
 }
 
@@ -84,6 +87,8 @@ function checkExists(key, value, db = connection) {
     .then((count) => {
       return count[0].n > 0
     })
+  // very slick. A little tricky to read, though.
+  // Could this be made more friendly to maintainers?
 }
 
 module.exports = {

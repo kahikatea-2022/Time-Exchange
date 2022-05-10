@@ -5,6 +5,7 @@ import { retrieveUsers } from './profileHelper'
 import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 import Error from '../components/Error/Error'
 
+// Could Profile and MyProfile be variants of a single component, like Register/Edit?
 function Profile() {
   const { id } = useParams()
   const [user, setUser] = useState({})
@@ -22,49 +23,49 @@ function Profile() {
   } else if (!user.username) {
     return <div>No users found</div>
   } else {
-    
+
     const teach = user.skills.filter((x) => x.role === 'teach')
     const learn = user.skills.filter((x) => x.role === 'learn')
     return (
       <div className="page-container">
-      <h2 id='teachers-profile'>Profile</h2>
-      <div className="profile-container">
-        <div className="profile-column">
-          <div className="profile-card">
-            <div className="profile-welcome">My name is {user.firstName}</div>
-            <img id='user-pfp' src={user.picture || '/defaultProfileImage.jpg'} alt={user.firstName} />
-            <div className="profile-about">
-              Learn about me:<br></br>
-              <br></br>
-              {user.about}
+        <h2 id='teachers-profile'>Profile</h2>
+        <div className="profile-container">
+          <div className="profile-column">
+            <div className="profile-card">
+              <div className="profile-welcome">My name is {user.firstName}</div>
+              <img id='user-pfp' src={user.picture || '/defaultProfileImage.jpg'} alt={user.firstName} />
+              <div className="profile-about">
+                Learn about me:<br></br>
+                <br></br>
+                {user.about}
+              </div>
+              <div className="profile-card">
+                Connect with me directly:<br></br>
+                <br></br>
+                {user.email}
+              </div>
+            </div>
+          </div>
+          <div className="profile-column">
+            <div className="profile-card">
+              <h4>Things I can TEACH you:</h4>
+              {teach.map((x) => (
+                <div className="profile-skill" key={x.id}>
+                  {x.skill}
+                </div>
+              ))}
             </div>
             <div className="profile-card">
-              Connect with me directly:<br></br>
-              <br></br>
-              {user.email}
+              <h4>I want to LEARN:</h4>
+              {learn.map((x) => (
+                <div className="profile-skill" key={x.id}>
+                  {x.skill}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
-        <div className="profile-column">
-          <div className="profile-card">
-            <h4>Things I can TEACH you:</h4>
-            {teach.map((x) => (
-              <div className="profile-skill" key={x.id}>
-                {x.skill}
-              </div>
-            ))}
-          </div>
-          <div className="profile-card">
-            <h4>I want to LEARN:</h4>
-            {learn.map((x) => (
-              <div className="profile-skill" key={x.id}>
-                {x.skill}
-              </div>
-            ))}
           </div>
         </div>
       </div>
-    </div>
     )
   }
 }

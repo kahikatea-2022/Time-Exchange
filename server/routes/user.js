@@ -119,6 +119,7 @@ router.get('/:id', async (req, res) => {
       lastName: user.lastName,
       username: user.username,
       email: user.email, //maybe we don't want email??
+      // And I see you may have already thought of this. :)
       about: user.about,
       skills,
     }) // do we want to give all info? Or filter before send?

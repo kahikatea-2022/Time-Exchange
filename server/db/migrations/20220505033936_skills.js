@@ -9,7 +9,10 @@ exports.up = async (knex) => {
       .inTable('categories')
       .defaultTo(1)
       .index()
+    // Could these have used the `references('users.id')` syntax?
     table.string('skill').notNullable()
+    // Having a 'skill' record with a 'skill' attribute is not ideal,
+    // as we see in Results.jsx. Maybe 'name' or 'short_desc' or similar?
     table.enu('role', ['learn', 'teach']).notNullable()
     table.timestamps(true, true)
   })

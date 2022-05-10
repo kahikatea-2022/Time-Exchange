@@ -6,6 +6,7 @@ const users = require('./users')
 
 // Prevent Jest from timing out (5s often isn't enough)
 jest.setTimeout(10000)
+// Hmmm. Are we worried about this? Does it signal a problem?
 
 beforeAll(() => {
   return testDb.migrate.latest()
@@ -112,3 +113,6 @@ describe('getUsers', () => {
     })
   })
 })
+
+// These tests are amazing! If you wanted to really dive in, you could add some
+// "sad path" tests to verify expected failure cases.

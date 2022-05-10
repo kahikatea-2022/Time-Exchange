@@ -78,6 +78,8 @@ router.get('/teachers', checkJwt, async (req, res) => {
     })
   }
 })
+// Learner and teacher routes could potentially be combined to /users/role/:roleName
+// for slightly DRYer implementation.
 
 function skillsByUser(id, skills) {
   return skills

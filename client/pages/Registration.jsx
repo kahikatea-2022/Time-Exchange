@@ -14,10 +14,11 @@ function Registration() {
   const title = pathname.includes('registration')
     ? 'Registration'
     : 'Edit profile'
+  // Dang. Very efficient reusing this component for both.
 
   const redirect = useNavigate()
   const user = useSelector((state) => state.user)
-  const [bio, setBio] = useState(() => {})
+  const [bio, setBio] = useState(() => { })
   const [learn, setLearn] = useState(initalSkillArray(5, 'learn'))
   const [teach, setTeach] = useState(initalSkillArray(5, 'teach'))
   // const [errors, setErrors] = useState(() => [])
@@ -48,6 +49,9 @@ function Registration() {
     }
     if (user.id) {
       redirect('/myprofile/edit')
+      // if you're going to be routing around via this component and
+      // others, it could be a good idea to store the paths in a
+      // common 'consts' file.
     }
   }, [user])
 
@@ -80,9 +84,9 @@ function Registration() {
         <form onSubmit={handleSubmit}>
           <BioForm setBio={setBio} bio={bio} />
           <SkillForm role='learn' changeFunct={setLearn} array={learn} categories={categories} />
-          <SkillForm role='teach' changeFunct={setTeach} array={teach} categories={categories} required={true}/>
+          <SkillForm role='teach' changeFunct={setTeach} array={teach} categories={categories} required={true} />
           <div className='btn'>
-          <button id='register-btn' type='submit'>{user.id ? "Update" : "Register"}</button>
+            <button id='register-btn' type='submit'>{user.id ? "Update" : "Register"}</button>
           </div>
         </form>
       </div>

@@ -40,6 +40,7 @@ const testAuthHeader = {
 
 describe('POST /api/v1/user', () => {
   it('responds with status 401 when no token is passed', () => {
+    // Nice sad-path test!
     return request(server)
       .post(`/api/v1/user`)
       .send(newUser)

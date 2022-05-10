@@ -9,6 +9,8 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import MyProfile from './pages/MyProfile'
 import Results from './pages/Results'
+// Having these "pages" components outside the component folder is rather atypical.
+// We would usually think of these as a type of component.
 
 function App() {
   cacheUser(useAuth0)
