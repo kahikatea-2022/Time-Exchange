@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { retrieveUsers } from './profileHelper'
 import WaitIndicator from '../components/WaitIndicator/WaitIndicator'
 import Error from '../components/Error/Error'
+import Rating from '../components/Rating'
 
 function Profile() {
   const { id } = useParams()
@@ -25,6 +26,10 @@ function Profile() {
   } else {
     const teach = user.skills.filter((x) => x.role === 'teach')
     const learn = user.skills.filter((x) => x.role === 'learn')
+    const onRatingChange = (newRating) => {
+      setUser({ ...user, rating: newRating })
+    }
+
     return (
       <div className="page-container">
         <h2 id="teachers-profile">Profile</h2>
@@ -37,6 +42,7 @@ function Profile() {
                 src={user.picture || '/defaultProfileImage.jpg'}
                 alt={user.firstName}
               />
+              <Rating rating={user.rating || 0} onChange={onRatingChange} />
               <div className="profile-region">Location: {user.region}</div>
               <div className="profile-about">
                 Learn about me:<br></br>
