@@ -75,7 +75,6 @@ function Registration() {
         })),
     ]
     const userDetails = { ...bio, region: bio.region || 'Northland', skills }
-    console.log(userDetails)
     const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }
   return (
