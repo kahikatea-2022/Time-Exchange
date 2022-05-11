@@ -26,10 +26,10 @@
   &-card {
     background: rgba(white, 0.5);
     border-radius: 15px;
-    padding: 30px;
+    padding: 24px;
     font-family: 'Cantarell', sans-serif;
     font-weight: 100;
-    font-size: 24px;
+    font-size: 22px;
     color: #390345;
   }
 
@@ -43,7 +43,7 @@
   }
 
   &-about {
-    padding: 20px 0;
+    padding: 13px 0;
     font-style: italic;
   }
 
@@ -52,6 +52,10 @@
     list-style-type: disc;
     list-style-position: inside;
     font-style: italic;
+  }
+  &-region {
+    font-style: italic;
+    margin-top: 10px;
   }
 }
 
@@ -62,19 +66,29 @@ h2 {
 h4 {
   margin-top: 0;
   margin-bottom: 16px;
-  font-size: 30px;
+  font-size: 24px;
   font-family: 'Shrikhand', cursive;
   letter-spacing: 1px;
 }
 
 #profile-link {
   font-style: italic;
-  padding: 3px 10px;
+  padding: 3px 12px 7px 10px;
   text-decoration: none;
   color: #ebefe7;
   background-color: #390345;
   border-radius: 10px;
+  font-size: 21px;
 }
+#profile-link:hover {
+  background-color: #6f367c;
+  transition: all 0.3s ease-in-out;
+ }
+
+
+
+
+
 #teachers-profile {
   font-size: 60px;
   color: #390345;
@@ -85,7 +99,7 @@ h4 {
   height: 300px;
 }
 #my-profile-title {
-  font-size: 60px;
+  font-size: 35px;
   color: #390345;
   -webkit-text-stroke: 0.1px white;
 }
