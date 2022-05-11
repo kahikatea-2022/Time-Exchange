@@ -14,7 +14,7 @@ function UserResults({ user, title }) {
             <div className="image-username-wrapper">
               <img
                 className="results-profile-image"
-                src="/defaultProfileImage.jpg"
+                src={user.picture || '/defaultProfileImage.jpg'}
               />
               <h2 id="user-name">{user.firstName}</h2>
               <Rating rating={user.rating} />

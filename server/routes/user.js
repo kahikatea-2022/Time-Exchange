@@ -127,6 +127,7 @@ router.get('/:id', async (req, res) => {
       about: user.about,
       rating: user.rating,
       region: user.region,
+      picture: user.picture,
       skills,
     }) // do we want to give all info? Or filter before send?
   } catch (error) {
