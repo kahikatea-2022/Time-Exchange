@@ -51,7 +51,8 @@ function getUserById(id, db = connection) {
       'email',
       'about',
       'rating',
-      'region'
+      'region',
+      'picture'
     )
     .where('id', id)
     .first()
@@ -69,7 +70,8 @@ function getUserByAuth(auth0_id, db = connection) {
       'email',
       'about',
       'rating',
-      'region'
+      'region',
+      'picture'
     )
     .where('auth0_id', auth0_id)
     .first()
@@ -86,7 +88,8 @@ function getUsers(db = connection) {
       'email',
       'about',
       'rating',
-      'region'
+      'region',
+      'picture'
     )
     .where('status', 'active')
 }

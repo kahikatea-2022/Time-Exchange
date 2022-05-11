@@ -10,7 +10,6 @@
 }
 
 .message-container {
-  
   border-radius: 1em;
   height: 200px;
   width: 100%; // change, responsive
@@ -18,7 +17,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background-color: hsla(0,0%,100%,.5);
+  background-color: hsla(0, 0%, 100%, 0.5);
 }
 
 .message {
@@ -38,7 +37,6 @@
   border: 1px solid hsla(212, 100%, 50%, 1);
   border-radius: 1em;
   background-color: hsla(212, 100%, 50%, 0.1);
-  
 }
 
 .message-right {
@@ -77,11 +75,10 @@
     border-radius: 10px;
     padding: 0.8em;
     margin: 5px;
-    background-color: hsla(0,0%,100%,.5);
+    background-color: hsla(0, 0%, 100%, 0.5);
     border: none;
     font-family: 'Cantarell', sans-serif;
     font-style: italic;
-
   }
   button {
     height: 100%;
@@ -90,7 +87,7 @@
     background-color: #390345;
     color: white;
     border-radius: 5px;
-    font-family: 'Chewy',cursive;
+    font-family: 'Chewy', cursive;
     font-size: 20px;
     letter-spacing: 2px;
     margin: 5px;

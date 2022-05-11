@@ -13,6 +13,7 @@ exports.seed = async function (knex) {
         'I love all things Vampire! I am pretty good at fencing and Brazilian Jiu Jitsu and keen to find someone to teach me how to sing; Tuvan Throat singing style in particular. Would also love to learn knitting to make coats for my blessing of cats.',
       rating: 4,
       region: 'Bay of Plenty',
+      picture: '/_tracey.jpeg',
     },
     {
       id: 2,
@@ -36,6 +37,7 @@ exports.seed = async function (knex) {
       about: 'I love myself, what about you?',
       rating: 5,
       region: 'Auckland',
+      picture: '/_garrett.jpeg',
     },
     {
       id: 4,
@@ -48,6 +50,7 @@ exports.seed = async function (knex) {
         'My friends call me Ben, I stream on twitch. Can anyone teach me how to drive? Have failed my restricted license 3 times this month. Can teach you gaming and also am pretty decent at airsoft. Am the biggest fan of My little Unicorns.',
       rating: 4,
       region: 'Auckland',
+      picture: '/_benneto.jpeg',
     },
     {
       id: 5,
@@ -60,6 +63,7 @@ exports.seed = async function (knex) {
         'I am a keen RPGer and love crafting suits of armour and weapons in my home forge. Have been interested in learning to grow mushrooms, and other plants. My Papillon - Pappy always steals my Lasercap, desperately need someone to teach me how to groom Pappy!.',
       rating: 5,
       region: 'Canterbury',
+      picture: '/_terrance.jpg',
     },
     {
       id: 6,
@@ -72,6 +76,7 @@ exports.seed = async function (knex) {
         'Would like to connect with any other Mandalorian refugees. Will teach Mandolore culinary arts in exchange for armor and weapons maintenance skills. I am also an experienced Blurrg racer. This is the way.',
       rating: 4,
       region: 'Waikato',
+      picture: '/_king.jpeg',
     },
     {
       id: 7,
@@ -84,18 +89,20 @@ exports.seed = async function (knex) {
         'My interests are drinking, making and then drinking more beer. I am a competitive Salsa dancer and I also make my own shoes and toe socks.',
       rating: 5,
       region: 'Auckland',
+      picture: '/_reginald.jpeg',
     },
     {
       id: 8,
       auth0_id: 'auth0|62734d140b600f00693e3f56',
-      first_name: 'Beverly',
+      first_name: 'Karen',
       last_name: 'Cumberbatch',
-      username: 'AuntBeverly',
+      username: 'AuntKaren',
       email: 'dontcallmeabatch@batchery.com',
       about:
         'My passions are fine dining and high end handbags. I am an expert crypto-trader and can teach you how to sell NFTs back to yourself for tax minimisation strats. I do not provide any financial advice. Looking for a tennis partner/teacher and to improve my Spanish skills.',
       rating: 2,
       region: 'Auckland',
+      picture: '/_karen.jpeg',
     },
     {
       id: 9,
@@ -108,6 +115,7 @@ exports.seed = async function (knex) {
         'Hi my name is Brent. I am new to this site and happy to meet you all. I am a keen fisherman and tinker around a lot with engines and motorbikes in my spare time. I would like to learn more about philosopy and meditation. Need to find a Yoga teacher.',
       rating: 1,
       region: 'Nelson Marlborough',
+      picture: '/_brent.jpeg',
     },
     {
       id: 10,
@@ -120,6 +128,7 @@ exports.seed = async function (knex) {
         'I am passionate about lockpicking, bass guitar and mid-16th century French antiques. I would interested in learning about post-modernism, and axe-throwing.',
       rating: 1,
       region: 'Nelson Marlborough',
+      picture: '/_lisbeth.jpeg',
     },
   ])
 }
