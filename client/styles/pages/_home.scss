@@ -37,7 +37,6 @@ body {
   //border: 1px solid pink;
   border-radius: 25px;
   width: 100%;
-
 }
 .image-container {
   display: flex;
@@ -55,7 +54,6 @@ body {
   text-align: center;
   -webkit-text-stroke: 0.1px white;
   padding-top: 15px;
-
 }
 #image {
   width: 50%;
@@ -67,7 +65,6 @@ body {
   align-items: center;
   //border: 2px solid red;
   width: 100%;
-
 }
 
 .blurb-text {
@@ -91,7 +88,7 @@ body {
   font-size: 20px;
   text-align: center;
   letter-spacing: 2.5px;
-  color:#390345;
+  color: #390345;
 }
 .reviews-container {
   display: flex;
@@ -119,16 +116,11 @@ body {
 .review-title {
   padding: 24px 10px 5px 10px;
   font-size: 22px;
-  
 }
 .review-text {
-  
   text-align: center;
   padding: 8px 15px;
 }
-
-
-
 
 // styles for the home page here
 // delete the above example

@@ -74,7 +74,12 @@ function Registration() {
           category: categoryNameToId(skill.category),
         })),
     ]
-    const userDetails = { ...bio, picture: user.picture ,region: bio.region || 'Northland', skills }
+    const userDetails = {
+      ...bio,
+      picture: user.picture,
+      region: bio.region || 'Northland',
+      skills,
+    }
     const error = saveUser(userDetails, user.token, redirect, !!user.id)
   }
   return (

@@ -65,12 +65,9 @@ function BioForm({ setBio, bio, regions }) {
               </option>
             ))}
           </select>
-          
-         
         </div>
-        <div className='email-container'>
-          
-          <label htmlFor="email" className="label" id='email-title'>
+        <div className="email-container">
+          <label htmlFor="email" className="label" id="email-title">
             Email
           </label>
           <input
@@ -81,7 +78,6 @@ function BioForm({ setBio, bio, regions }) {
             onChange={handleChange}
             disabled={true}
           />
-          
         </div>
         <div className="about-input-form">
           <label htmlFor="about" className="label">
