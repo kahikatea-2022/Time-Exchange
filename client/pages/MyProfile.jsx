@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Rating from '../components/Rating'
+import { HiOutlinePencilAlt } from 'react-icons/hi'
 
 function MyProfile() {
   const user = useSelector((globalState) => globalState.user)
@@ -22,7 +23,7 @@ function MyProfile() {
             <div className="profile-about">{user.about}</div>
             <div className="profile-link">
               <Link id="profile-link" to="/myprofile/edit">
-                Edit my profile
+                Edit profile <HiOutlinePencilAlt />
               </Link>
             </div>
           </div>
