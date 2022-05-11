@@ -10,6 +10,7 @@ function addUser(user, db = connection) {
     email: user.email,
     about: user.about,
     region: user.region,
+    picture: user.picture,
   })
 }
 
@@ -23,6 +24,7 @@ function updateUser(user, db = connection) {
     email: user.email,
     about: user.about,
     region: user.region,
+    picture: user.picture,
   })
 }
 
