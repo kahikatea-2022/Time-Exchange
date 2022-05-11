@@ -16,7 +16,7 @@ function MyProfile() {
         <div className="profile-column">
           <div className="profile-card">
             <div className="profile-welcome">Welcome {user.firstName}!</div>
-            <img src={user.picture} alt={user.firstName} />
+            <img id="user-pfp" src={user.picture} alt={user.firstName} />
             <Rating rating={user.rating} />
             <div className="profile-region">Location: {user.region}</div>
             <div className="profile-about">{user.about}</div>
