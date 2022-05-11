@@ -37,6 +37,7 @@ router.post('/', checkJwt, async (req, res) => {
       about: user.about,
       rating: user.rating,
       region: user.region,
+      picture: user.picture,
     })
     await addUserSkills(id, user.skills)
     res.status(201).json({ id })
@@ -64,6 +65,7 @@ router.put('/', checkJwt, async (req, res) => {
       about: user.about,
       rating: user.rating,
       region: user.region,
+      picture: user.picture,
     })
     const { id } = await getUserByAuth(auth0Id)
     await updateUserSkills(id, user.skills)
@@ -127,6 +129,7 @@ router.get('/:id', async (req, res) => {
       about: user.about,
       rating: user.rating,
       region: user.region,
+      picture: user.picture,
       skills,
     }) // do we want to give all info? Or filter before send?
   } catch (error) {

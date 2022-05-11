@@ -44,6 +44,7 @@
   margin: 10px;
   font-family: 'Chewy', cursive;
   color: #390345;
+  margin-left: 50px;
 }
 .form-box {
   border-radius: 5px;
@@ -84,7 +85,16 @@
   width: 74%;
   height: 45px;
 }
-
+#email {
+  margin-left: 13px;
+}
+#email-title {
+  margin-left: 56px;
+}
+.email-container {
+  display: flex;
+  justify-content: flex-start;
+}
 .about-input-form {
   display: flex;
   justify-content: space-evenly;
@@ -98,6 +108,9 @@
   font-family: 'Chewy', cursive;
   font-size: 20px;
   padding: 1px;
+  border-radius: 5px;
+  margin: 10px 20px 10px 0;
+  text-align: left;
 }
 
 .btn {

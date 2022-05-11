@@ -7,7 +7,7 @@ import {
 } from '../Authenticated/Authenticated'
 import { useSelector } from 'react-redux'
 
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu, GiYinYang } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
 function Nav() {
@@ -39,10 +39,14 @@ function Nav() {
   return (
     <nav className="nav-menu">
       <div className="hamburger-container" onClick={toggleMenu}>
-        <GiHamburgerMenu className="hamburger" onClick={toggleMenu} />
+        {open ? (
+          <GiYinYang className="hamburger" onClick={toggleMenu} />
+        ) : (
+          <GiHamburgerMenu className="hamburger" onClick={toggleMenu} />
+        )}
       </div>
       {open && (
-        <ul className="main-nav">
+        <ul className="main-nav" onClick={toggleMenu}>
           <IfAuthenticated>
             <li className="nav-item">
               <Link id="nav-link" to="/results/teachers">
