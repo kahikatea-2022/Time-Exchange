@@ -55,7 +55,7 @@ exports.seed = async function (knex) {
     {
       id: 5,
       auth0_id: 'auth0|62734d140b600f00693e3f53',
-      first_name: 'Terrance Trent',
+      first_name: 'Terrance',
       last_name: 'Darby',
       username: 'GabanEternal',
       email: 'dogooder@kittenmail.com',
@@ -114,7 +114,7 @@ exports.seed = async function (knex) {
       about:
         'Hi my name is Brent. I am new to this site and happy to meet you all. I am a keen fisherman and tinker around a lot with engines and motorbikes in my spare time. I would like to learn more about philosopy and meditation. Need to find a Yoga teacher.',
       rating: 1,
-      region: 'Nelson Marlborough',
+      region: 'Canterbury',
       picture: '/_brent.jpeg',
     },
     {
@@ -127,7 +127,7 @@ exports.seed = async function (knex) {
       about:
         'I am passionate about lockpicking, bass guitar and mid-16th century French antiques. I would interested in learning about post-modernism, and axe-throwing.',
       rating: 1,
-      region: 'Nelson Marlborough',
+      region: 'Canterbury',
       picture: '/_lisbeth.jpeg',
     },
   ])

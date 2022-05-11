@@ -4,7 +4,7 @@ import Rating from '../Rating'
 
 function UserResults({ user, title }) {
   return (
-    <div className="search-container">
+    
       <div className="search-results-container">
         <h2 className="user-name">
           {user.firstName} {user.lastName}
@@ -35,7 +35,7 @@ function UserResults({ user, title }) {
           </div>
         </Link>
       </div>
-    </div>
+    
   )
 }
 
