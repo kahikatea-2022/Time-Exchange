@@ -23,12 +23,12 @@ describe('getUserById', () => {
   it('returns the correct user', () => {
     return users.getUserById('1', testDb).then((user) => {
       expect(user.id).toBe(1)
-      expect(user.auth0Id).toBe('auth0|62734d140b600f00693e3f50')
-      expect(user.firstName).toBe('Test')
-      expect(user.lastName).toBe('User')
-      expect(user.username).toBe('testUser01')
-      expect(user.email).toBe('testemail@test.com')
-      expect(user.about).toBe('This is my test user account. Cool!')
+      expect(user.auth0Id).toBe('auth0|62734d140b600f00693e3f51')
+      expect(user.firstName).toBe('Tracey')
+      expect(user.lastName).toBe('Anon')
+      expect(user.username).toBe('Traceyliveshere')
+      expect(user.email).toBe('tracey@doghome.com')
+      expect(user.about).toContain('I love all things')
       return null
     })
   })
@@ -37,15 +37,15 @@ describe('getUserById', () => {
 describe('getUserByAuth', () => {
   it('returns the correct user', () => {
     return users
-      .getUserByAuth('auth0|62734d140b600f00693e3f50', testDb)
+      .getUserByAuth('auth0|62734d140b600f00693e3f51', testDb)
       .then((user) => {
         expect(user.id).toBe(1)
-        expect(user.auth0Id).toBe('auth0|62734d140b600f00693e3f50')
-        expect(user.firstName).toBe('Test')
-        expect(user.lastName).toBe('User')
-        expect(user.username).toBe('testUser01')
-        expect(user.email).toBe('testemail@test.com')
-        expect(user.about).toBe('This is my test user account. Cool!')
+        expect(user.auth0Id).toBe('auth0|62734d140b600f00693e3f51')
+        expect(user.firstName).toBe('Tracey')
+        expect(user.lastName).toBe('Anon')
+        expect(user.username).toBe('Traceyliveshere')
+        expect(user.email).toBe('tracey@doghome.com')
+        expect(user.about).toContain('I love all things')
         return null
       })
   })
@@ -80,10 +80,10 @@ describe('addUser', () => {
 describe('updateUser', () => {
   it('updates an existing user', () => {
     const changes = {
-      auth0Id: 'auth0|62734d140b600f00693e3f50',
+      auth0Id: 'auth0|62734d140b600f00693e3f51',
       firstName: 'newFirstName',
       lastName: 'User',
-      username: 'testUser01',
+      username: 'testUser0001',
       email: 'testemail@test.com',
       about: 'New about',
     }
@@ -92,10 +92,10 @@ describe('updateUser', () => {
       .then((id) => users.getUserById(id, testDb))
       .then((user) => {
         expect(user.id).toBe(1)
-        expect(user.auth0Id).toBe('auth0|62734d140b600f00693e3f50')
+        expect(user.auth0Id).toBe('auth0|62734d140b600f00693e3f51')
         expect(user.firstName).toBe('newFirstName')
         expect(user.lastName).toBe('User')
-        expect(user.username).toBe('testUser01')
+        expect(user.username).toBe('testUser0001')
         expect(user.email).toBe('testemail@test.com')
         expect(user.about).toBe('New about')
         return null
@@ -107,7 +107,7 @@ describe('updateUser', () => {
 describe('getUsers', () => {
   it('returns all active users', () => {
     return users.getUsers(testDb).then((array) => {
-      expect(array).toHaveLength(1)
+      expect(array).toHaveLength(9)
       return null
     })
   })
