@@ -1,6 +1,7 @@
 # Our plan for working together
 
 ## Vibes lead
+
 The vibes leader for the day will be the person who is tasked with being attentive to the synergy and group dynamics for the day as well as other tasks including:
 
 - Rounding everyone up for meetings (flicking an @ in the chat)
@@ -9,7 +10,6 @@ The vibes leader for the day will be the person who is tasked with being attenti
 - Lead group retro
 
 ## Conflict management plan
-https://www.otago.ac.nz/humanresources/otago689320.pdf
 
 - Take 5 to cool off before attempting to sort things out
 - Take time to try to understand and acknowledge the issue from the other person's point of view
@@ -27,9 +27,10 @@ https://www.otago.ac.nz/humanresources/otago689320.pdf
 ## Wellbeing plan
 
 ### How we are going to take care of ourselves
+
 What things are you going to do for your wellbeing during this project? You might want to think about physical wellbeing, relationships/family, mental and emotional wellbeing, environmental aspects.
 
-Will be individual for each member, think back to our human skills session on wellbeing. 
+Will be individual for each member, think back to our human skills session on wellbeing.
 
 - Jasmine - Planned mindfulness in the afternoons, mandatory screen break during lunch, will eat lunch outside if possible, journalling each day
 
@@ -42,6 +43,7 @@ Will be individual for each member, think back to our human skills session on we
 - Jesse - Taking a break after the closing circle to spend time with partner and eat dinner with her, Making sure I tak a walk each day and get outside
 
 ### How we are going to take care of each other
+
 Being aware of what stress looks like for the other team members (see miro), being vigilant to the signs.
 
 Responding to those signs with what we have said would help us in those times of stress (see miro). Commonly people would like to be asked what their needs are, so they can let us know how we can best help them.
