@@ -62,11 +62,12 @@ function BioForm({ setBio, bio, regions }) {
             onChange={handleChange}
             disabled={true}
           />
-          <label id="region" htmlFor="region">
+          <div>
+          <label id="region" htmlFor="region" className="label">
             Location
           </label>
           <select
-            className="select-region"
+            className="select-category"
             name="region"
             onChange={(e) => handleChange(e)}
             value={bio?.region || ''}
@@ -77,6 +78,7 @@ function BioForm({ setBio, bio, regions }) {
               </option>
             ))}
           </select>
+          </div>
         </div>
         <div className="about-input-form">
           <label htmlFor="about" className="label">
