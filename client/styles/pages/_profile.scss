@@ -13,6 +13,7 @@
 
   &-container {
     display: flex;
+    margin-bottom: 10px;
   }
 
   &-column {
@@ -31,6 +32,7 @@
     font-weight: 100;
     font-size: 22px;
     color: #390345;
+    margin: 20px;
   }
 
   &-card + &-card {
@@ -93,10 +95,13 @@ h4 {
   font-size: 60px;
   color: #390345;
   -webkit-text-stroke: 0.1px white;
+  margin: 10px;
+  padding: 20px;
 }
 #user-pfp {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
 }
 #my-profile-title {
   font-size: 35px;
