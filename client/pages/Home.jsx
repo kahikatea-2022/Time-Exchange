@@ -8,7 +8,7 @@ function Home() {
           <div className="slogan-container">
             <h1 id="slogan">
               <i>
-                Everybody Is <br></br>An Expert <br></br>In Something.
+                Everybody Is An Expert <br></br>In Something.
               </i>
             </h1>
           </div>
@@ -50,7 +50,7 @@ function Home() {
             </p>
           </div>
           <div>
-            <h4 className="review-title">Toothpick crafting with Shane </h4>
+            <h4 className="review-title">Toothpick crafting</h4>
             <p className="review-text">
               I was able to connect with Shane who has taught me the forgotten
               art of toothpick crafting. I have finally found a safe place to
