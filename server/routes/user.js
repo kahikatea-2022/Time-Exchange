@@ -25,9 +25,12 @@ module.exports = router
 
 // POST /api/v1/user (protected)
 router.post('/', checkJwt, async (req, res) => {
+  console.log('I AM CALLED!!!')
   try {
     const auth0Id = req.user?.sub
+    console.log(auth0Id)
     const user = req.body
+    console.log(user)
     const [id] = await addUser({
       auth0Id,
       firstName: user.firstName,
@@ -39,6 +42,7 @@ router.post('/', checkJwt, async (req, res) => {
       region: user.region,
       picture: user.picture,
     })
+    console.log(id)
     await addUserSkills(id, user.skills)
     res.status(201).json({ id })
   } catch (error) {

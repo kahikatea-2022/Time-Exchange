@@ -26,10 +26,10 @@ function newConversation(user_1, user_2, db = connection) {
   return db('conversations').insert({ user_1, user_2 }) //
 }
 
-async function getConversationId(user_1, user_2) {
+async function getConversationId(user_1, user_2, db = connection) {
   try {
-    const conversation = await getConversationByUsers(user_1, user_2)
-    return conversation?.id || (await newConversation(user_1, user_2))
+    const conversation = await getConversationByUsers(user_1, user_2, db)
+    return conversation?.id || (await newConversation(user_1, user_2, db))
   } catch (err) {
     console.log(err)
     return err
