@@ -47,7 +47,7 @@ describe('addUserSkills', () => {
       .then(() => getSkillsByUserId(2, testDb))
       .then((skills) => {
         expect(Array.isArray(skills)).toBe(true)
-        expect(skills).toHaveLength(6)
+        expect(skills).toHaveLength(10)
         const skill = skills[0]
         expect(skill.id).not.toBeNull()
         expect(skill.role).toBe('learn')

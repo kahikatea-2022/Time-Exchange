@@ -23,7 +23,7 @@ describe('getCategories', () => {
   it('returns the correct categories', () => {
     return getCategories(testDb).then((skills) => {
       expect(Array.isArray(skills)).toBe(true)
-      expect(skills).toHaveLength(6)
+      expect(skills).toHaveLength(9)
       return null
     })
   })

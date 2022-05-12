@@ -107,7 +107,7 @@ describe('updateUser', () => {
 describe('getUsers', () => {
   it('returns all active users', () => {
     return users.getUsers(testDb).then((array) => {
-      expect(array).toHaveLength(9)
+      expect(array).toHaveLength(10)
       return null
     })
   })
