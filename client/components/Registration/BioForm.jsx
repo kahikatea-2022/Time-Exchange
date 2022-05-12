@@ -50,23 +50,11 @@ function BioForm({ setBio, bio, regions }) {
             value={bio?.username || ''}
             required
           />
-
-          <label htmlFor="email" className="label">
-            Email
-          </label>
-          <input
-            className="form-box"
-            name="email"
-            id="email"
-            value={bio?.email || ''}
-            onChange={handleChange}
-            disabled={true}
-          />
-          <label id="region" htmlFor="region">
+          <label id="region" htmlFor="region" className="label">
             Location
           </label>
           <select
-            className="select-region"
+            className="select-category"
             name="region"
             onChange={(e) => handleChange(e)}
             value={bio?.region || ''}
@@ -77,6 +65,19 @@ function BioForm({ setBio, bio, regions }) {
               </option>
             ))}
           </select>
+        </div>
+        <div className="email-container">
+          <label htmlFor="email" className="label" id="email-title">
+            Email
+          </label>
+          <input
+            className="form-box"
+            name="email"
+            id="email"
+            value={bio?.email || ''}
+            onChange={handleChange}
+            disabled={true}
+          />
         </div>
         <div className="about-input-form">
           <label htmlFor="about" className="label">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 import { getLoginFn, getLogoutFn, getRegisterFn } from '../../auth0-utils'
 import {
@@ -7,7 +7,7 @@ import {
 } from '../Authenticated/Authenticated'
 import { useSelector } from 'react-redux'
 
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu, GiYinYang } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
 
 function Nav() {
@@ -16,6 +16,25 @@ function Nav() {
   const login = getLoginFn(useAuth0)
   const logout = getLogoutFn(useAuth0)
   const register = getRegisterFn(useAuth0)
+
+  const ref = useRef()
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      // If the menu is open and the clicked target is not within the menu,
+      // then close the menu
+      if (open && ref.current && !ref.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', checkIfClickedOutside)
+
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener('mousedown', checkIfClickedOutside)
+    }
+  }, [open])
 
   function handleLogin(event) {
     event.preventDefault()
@@ -38,11 +57,15 @@ function Nav() {
 
   return (
     <nav className="nav-menu">
-      <div className="hamburger-container" onClick={toggleMenu}>
-        <GiHamburgerMenu className="hamburger" onClick={toggleMenu} />
+      <div className="hamburger-container" onClick={toggleMenu} ref={ref}>
+        {open ? (
+          <GiYinYang className="hamburger" onClick={toggleMenu} />
+        ) : (
+          <GiHamburgerMenu className="hamburger" onClick={toggleMenu} />
+        )}
       </div>
       {open && (
-        <ul className="main-nav">
+        <ul className="main-nav" onClick={toggleMenu} ref={ref}>
           <IfAuthenticated>
             <li className="nav-item">
               <Link id="nav-link" to="/results/teachers">
